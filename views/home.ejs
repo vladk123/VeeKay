@@ -1,0 +1,30 @@
+<% layout('./layouts/boilerplate') %>
+<div class="stars fade-in"></div>
+<div class="twinkle-effect"></div>
+<div class="to-fade-out fade-in">
+    <div id="" class="clouds"></div>
+</div>
+<!-- has to be separate div, otherwise animations don't both work (fade in, and scroll up on redirect) -->
+<div class="animate">
+    <div class="home fade-in">
+        <div class="vlad fade-in">
+            <h1 class="animate">Vlad Kapitantchouk</h1>
+            <h2 class="animate">Front and Back-End Web Developer</h2>
+        </div>
+        <span class="buttons">
+            <a class="button animate" id="plain-resume" data-back="Scroll through to view resume" data-front="Normal Resume" onclick="homeAnimateUp()"></a>
+            <a href="#" class="button animate" data-back="Mini-games to view resume (coming soon)" data-front="Interactive Resume"></a>
+        </span>
+
+    </div>
+</div>
+
+<audio id="music">
+    <source src="audio/Retro-Wave-Tune-Envato.mp3" type="audio/mpeg">
+</audio>
+
+<div class="animate" id="music-div">
+    <div id="music-control" class="play"></div>
+</div>
+
+<script src="js/home.js"></script>

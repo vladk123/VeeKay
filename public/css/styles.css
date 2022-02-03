@@ -1,0 +1,820 @@
+/* adding a new downloaded font (from 1999, so does not look great on all browsers) */
+@font-face {
+    font-family: retro;
+    src: url(../fonts/SFAlienEncounters.ttf);
+}
+
+/* define fading in keyframes for initial page load */
+@keyframes fadein {
+    from { opacity:0;}
+    to { opacity:1;}
+}
+@-moz-keyframes fadein { 
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-webkit-keyframes fadein { 
+    from {opacity:0;}
+    to { opacity:1;}
+}
+@-o-keyframes fadein {
+    from { opacity:0;}
+    to {opacity: 1;}
+}
+
+/* define fading out keyframes for exiting page */
+@keyframes fadeout {
+    from { opacity:1;}
+    to { opacity:0;}
+}
+@-moz-keyframes fadeout { 
+    from {opacity:1;}
+    to {opacity:0;}
+}
+@-webkit-keyframes fadeout { 
+    from {opacity:1;}
+    to { opacity:0;}
+}
+@-o-keyframes fadeout {
+    from { opacity:1;}
+    to {opacity: 0;}
+}
+
+
+html{
+  /* hide scrollbar for IE / ff */
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+/* hide scrollbar for webkit (chrome) */
+html::-webkit-scrollbar {
+  display: none;
+
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    color: white;
+    min-width: 500px;
+}
+
+/* link (not visited) */
+a:link {
+  color: cyan;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(23, 255, 255);
+  text-decoration: none;
+}
+
+/* mousing over link */
+a:hover {
+  /* color: rgb(255, 52, 147); */
+  color: rgb(253, 75, 253);
+}
+
+/* selected link */
+a:active {
+  color: rgb(23, 255, 255);
+  text-decoration: none;
+}
+
+
+.animate-up {
+  animation: fadeOutUpBig; /* referring directly to the animation's @keyframe declaration (I referred to this css in the boilerplate page) */
+  -webkit-animation: fadeOutUpBig; /* referring directly to the animation's @keyframe declaration (I referred to this css in the boilerplate page) */
+  animation-duration: 2s; 
+}
+
+.fade-out{
+  /* animation: fadeOutUpBig;
+  animation-duration: 2s; */
+
+  /* fade out */
+  animation: fadeout 1.5s;
+  -moz-animation: fadeout 1.5s; 
+  -webkit-animation: fadeout 1.5s; 
+  -o-animation: fadeout 1.5s; 
+}
+
+.fade-in {
+  /* fade in */
+  animation: fadein 2s;
+  animation-iteration-count: 1;
+  -moz-animation: fadein 2s; 
+  -webkit-animation: fadein 2s; 
+  -o-animation: fadein 2s; 
+}
+
+.home {
+    position:relative;
+    top: 0;
+    left:0;
+    height: 100vh;
+    background-image: url("../images/home-faded-edges.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    overflow-x: hidden;
+    
+}
+
+/* home page header */
+.vlad{
+    font-size: 1.2em;
+    position: relative;
+    top: 10%;
+    text-align: center;
+    font-family: retro;
+    color: white;
+
+    /* text shadow */ 
+    text-shadow: 2px 2px 0px rgb(255, 255, 255);
+
+    /* text gradient */
+    background-image: linear-gradient(0deg, rgb(0, 232, 240), rgb(248, 0, 227));
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+/* BACKGROUND */
+@keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-webkit-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-moz-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-ms-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+
+@keyframes move-clouds {
+    from {background-position:0 0;}
+    to {background-position:9500px 0;}
+}
+@-webkit-keyframes move-clouds {
+    from {background-position:0 0;}
+    to {background-position:9500px 0;}
+}
+@-moz-keyframes move-clouds {
+    from {background-position:0 0;}
+    to {background-position:9500px 0;}
+}
+@-ms-keyframes move-clouds {
+    from {background-position: 0;}
+    to {background-position:9500px 0;}
+}
+
+.stars {
+    background:rgb(0, 0, 0) url(../images/stars.jpg) repeat top center;
+    z-index:-9;
+  }
+
+.stars, .twinkle-effect, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+
+
+.twinkle-effect{
+  background:transparent url(../images/twinkle-filter.png) repeat top center;
+  z-index:-8;
+
+  -moz-animation:move-twinkle-filter 200s linear infinite;
+  -ms-animation:move-twinkle-filter 200s linear infinite;
+  -o-animation:move-twinkle-filter 200s linear infinite;
+  -webkit-animation:move-twinkle-filter 200s linear infinite;
+  animation:move-twinkle-filter 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(../images/cloud2-low-opacity-stretched.png) repeat top center;
+    /* opacity: 0.2; */
+    /* z-index:-7; */
+
+  -moz-animation:move-clouds 200s linear infinite;
+  -ms-animation:move-clouds 200s linear infinite;
+  -o-animation:move-clouds 200s linear infinite;
+  -webkit-animation:move-clouds 200s linear infinite;
+  animation:move-clouds 200s linear infinite;
+  
+}
+
+/* BUTTONS */
+@-webkit-keyframes pulsate-shadow {
+    0%   { box-shadow: 0 0 0 rgb(255, 255, 255); }
+    50%  { box-shadow: 0 0 17px rgb(255, 255, 255); }
+    100% { box-shadow: 0 0 0 rgb(255, 255, 255); }
+}
+@keyframes pulsate-shadow {
+    0%   { box-shadow: 0 0 0 rgb(255, 255, 255); }
+    50%  { box-shadow: 0 0 17px rgb(255, 255, 255); }
+    100% { box-shadow: 0 0 0 rgb(255, 255, 255); }
+}
+
+.long-button-descrip {
+    display: none;
+}
+
+.buttons {
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    /* fade in */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; 
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+}
+
+#plain-resume{
+    animation: pulsate-shadow 1s ease-out infinite;
+}
+
+.button {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    border:5px solid #e9c008bb;
+    margin-bottom: 10%;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .button:hover::after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+  .button:hover::before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+  }
+  .button::after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #e9c008bb;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+  .button::before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+  }
+
+  /* AUDIO CONTROLS (home page) */
+  #music-div #music-control {
+    position: fixed;
+    cursor: pointer;
+    height:40px;
+    width: 100%;
+    padding: 34px 18px;
+    right: 0;
+    bottom: 0px;
+    z-index: 2;
+    background-image: url(../images/audio-muted-light.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+    /* background-color: rgb(43, 97, 99); */
+    /* opacity: 0.5; */
+
+    /* fade in */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; 
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+    
+  }
+  .play {
+    background-image: url(../images/audio-muted-light.png);
+  }
+  .pause {
+     background-image: url(../images/audio-light.png)!important;
+  }
+
+
+  /******************* RESUME PAGE *******************/
+
+  #sky{
+    background-image: linear-gradient(rgba(48, 1, 66, 0.1), rgba(0, 5, 100, 0.8));
+    position: absolute;
+    top: 0px; /* Header Height */
+    bottom: 0px; /* Footer Height */
+    width: 100%;
+  }
+
+  #building {
+    top: 0px; /* Header Height */
+    bottom: 0px;
+    position: absolute;
+    width: 60%;
+    background-color: rgb(2, 4, 57);
+    overflow: hidden;
+    padding: 75px 50px;
+
+    animation: fadeInUpBig; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; 
+  }
+
+  /* since Firefox does not support backdrop-filter for the resume div (below)*/
+  @supports (-moz-appearance:none) {
+    .blur-ff { filter: blur(10px); } 
+}
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* margin: 100px; */
+    /* background-color: DodgerBlue; */
+  }
+
+  .window {
+    background-color: #000516;
+    width: 175px;
+    height: 200px;
+    margin: 40px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .window.window-on {
+    background-color: #9fa356;
+  }
+
+    @keyframes move-character {
+        from {background-position:-100% bottom;}
+        to {background-position:200% bottom;}
+    }
+    @-webkit-keyframes move-character {
+        from {background-position:-100% bottom;}
+        to {background-position:200% bottom;}
+    }
+    @-moz-keyframes move-character {
+        from {background-position:-100% bottom;}
+        to {background-position:200% bottom;}
+    }
+    @-ms-keyframes move-character {
+        from {background-position:-100% bottom;}
+        to {background-position:200% bottom;}
+    }
+
+    /* move character right */
+  .character.character-on-right {
+    width: 100%;
+    height:  100%;
+    position: relative;
+    background-image: url(../images/stickman.gif);
+    background-position: -100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    animation: move-character 5s linear 0s 1 alternate;
+    animation-timing-function: ease-out;
+  }
+
+  /* move character left */
+  .character.character-on-left {
+    width: 100%;
+    height:  100%;
+    position: relative;
+    background-image: url(../images/stickman.gif);
+    background-position: -100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    animation: move-character 5s linear 0s 1 alternate;
+    animation-timing-function: ease-out;
+    animation-direction: reverse;
+  }
+
+  /* the resume container settings below */
+  #resume-parent-div{
+    /* center it */
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+      background-color: rgba(34, 34, 79, .78);
+      width: 80%;
+      height: 80%;
+
+      /* no  mozilla support for blur apparently*/
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 4px 4px 10px black;
+      
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s; 
+  }
+
+  #close-resume{
+    position: absolute;
+    top: -16px;
+    right: -16px;
+
+    /* style button */
+    background-color: rgb(51, 51, 107); 
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 4px;
+    cursor: pointer;
+  }
+
+  #close-resume > i{
+    font-size: 20px;
+  }
+  
+  #close-resume:hover {
+    background-color: rgb(80, 80, 155);
+  }
+
+  section{
+    margin: 25px 0px 15px 0px;
+  }
+
+  /* tell viewer best to see on pc, if on small device */
+@media screen and (max-width: 860px) {
+  #go-on-pc{
+    display:inherit;
+  }
+}
+/* otherwise, hide it */
+@media screen and (min-width: 861px) {
+  #go-on-pc{
+    display: none;
+  }
+}
+  
+
+  #resume-nav-container { 
+    background-image: linear-gradient(to bottom, rgb(2, 1, 20), rgba(255,0,0,0));
+    opacity: 0.8;
+    position: relative;
+    top: 0;
+    padding-top: 25px;
+    min-height: 100px;
+    width: 100%;
+  }
+
+  #resume-nav > a:link{
+    color: white;
+  }
+
+  #resume-nav > a:visited{
+    color: white;
+  }
+
+  #resume-nav {
+      /* margin: auto; */
+      position: relative;
+      margin: 0 auto;
+      top: 50%;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      /* flexbox properties */
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+      padding: 15px 0px 15px 0px;
+  }
+
+  .nav-location-num{
+    display: none;
+  }
+
+  /* change header font size and padding if small screen */
+@media screen and (max-width: 820px) {
+  #resume-nav {
+    padding: 5px 0px 5px 0px;
+    font-size: 0.7em;
+  }
+  #resume-nav-container{
+    padding-top: 10px
+  }
+  .nav-location-num{
+    display:inherit;
+  }
+}
+
+  .resume-nav-location{
+    padding: 0px 20px 0 20px;
+  }
+
+  .resume-nav-location.highlight{
+    color: yellow;
+  }
+
+/* the resume content settings below */
+#resume-main-container{
+  margin: auto;
+  position:relative;
+  height: calc(90% - 115px);
+  max-width: 1000px;
+  overflow-y: scroll;
+  /* hide scrollbar for IE / ff */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  margin-bottom: 50px;
+  scroll-behavior: smooth; 
+}
+  /* hide scrollbar for webkit (chrome) */
+  #resume-main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .resume-h1-container{
+    overflow-x: hidden;
+  }
+
+.resume-h1 {
+  font-size: 2em;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  font-family: retro;
+  color: white;
+  margin-bottom: 20px;
+
+  /* text shadow */ 
+  text-shadow: 2px 2px 0px rgb(255, 255, 255);
+
+  /* text gradient */
+  background-image: linear-gradient(0deg, rgb(0, 232, 240), rgb(248, 0, 227));
+  -webkit-background-clip: text;
+  -ms-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+}
+
+/* horizontal lines on each side of the headers (unless less than certain width) */
+@media screen and (min-width: 1101px) {
+  .resume-h1::before,
+  .resume-h1::after {
+    display: inline-block;
+    content: "";
+    border-top: .3rem solid rgb(255, 255, 255);
+    min-width: 10%;
+    max-width: 25%;
+    margin: 0 1rem;
+    transform: translateY(-0.7rem);
+  }
+}
+
+.resume-content{
+  padding: 20px 50px 40px 50px;
+}
+
+.resume-content > p{
+  color:rgb(205, 239, 255);
+  padding: 5px 0 5px 0;
+  text-shadow: 2px 2px 7px rgb(0, 0, 0);
+}
+
+.resume-smaller-container {
+  display: flex;
+  padding: 0px 20px 0px 20px;
+}
+
+.resume-img{
+  border: 5px solid #e9c008bb;
+  background-image: url("../images/veekay-portrait-smaller.png");
+  background-repeat: no-repeat;
+  background-size: auto 140%;
+  background-position: center;
+  /* border-radius: 50%; */
+  height: 250px;
+  min-width: 250px;
+  background-color: rgb(0, 37, 85);
+  margin-top: 44.2px; /* to match the text beside the pic*/
+  margin-right: 50px;
+  /* box-shadow: 10px 10px 10px #020018; */
+  box-sizing: border-box;
+}
+
+.resume-img-container{
+  width: 110%;
+  height: 110%;
+  position: relative;
+  /* border: 5px solid #e9c008bb; */
+  top: 0px;
+  left: 0px;
+  margin: auto;
+  z-index: 3;
+}
+
+/* when screen is smaller, for the section with the portrait and About */
+@media screen and (max-width: 900px) {
+  .resume-smaller-container {
+      flex-wrap: wrap;
+  }
+  .resume-img{
+    margin: 0px auto 60px auto;
+  }
+}
+
+
+/* resume experience vertical tabs */
+#vertical-tab-container * {
+  box-sizing: border-box;
+  
+}
+
+/* Style the tab */
+.vertical-tabs {
+  float: left;
+  /* border: 1px solid #ccc; */
+  /* background-color: #f1f1f1; */
+  width: 30%;
+  /* height: 300px; */
+}
+
+/* Style the buttons inside the tab */
+.vertical-tabs button {
+  display: block;
+  background-color: inherit;
+  color: rgb(203, 210, 231);
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.7s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.vertical-tabs button:hover {
+  background-color: rgba(1, 1, 1, 0.3);
+}
+
+/* Create an active/current "tab button" class */
+.vertical-tabs button.active-tab {
+  background-color: rgba(1, 1, 1, 0.5);
+  /* border-left: 10px solid royalblue ; */
+  border-left: 10px solid rgb(222, 225, 65) ;
+  font-weight: bold;
+}
+
+/* Style the tab content */
+.vertical-tab-content {
+  float: left;
+  padding: 15px 30px 15px 30px;
+  /* border: 1px solid #ccc; */
+  background-color: rgba(1, 1, 1, 0.5);
+  width: 70%;
+  /* border-left: none; */
+  min-height: 400px;
+  /* transition: 0.2s; */
+}
+
+#vertical-tab-container {
+  width: 100%;
+}
+
+/* #vertical-tab-container > .vertical-tab-content >  */
+.resume-h2 {
+  /* color:rgb(192, 227, 255); */
+  color:rgb(103, 210, 243);
+  margin: 10px 0px 10px;
+}
+
+/* decorate the bullet points */
+/* #vertical-tab-container > .vertical-tab-content > ul >  */
+li::before{
+  content: "\25BA"; 
+  color:rgb(192, 227, 255);
+  font-weight: bold;
+  display: inline-block; 
+  width: 2em;
+  margin-left: -2em;
+}
+/* disable the default */
+/* #vertical-tab-container > .vertical-tab-content > ul >  */
+li{
+  list-style: none;
+  margin: 0px 0px 15px 0px;
+}
+
+.date{
+  margin-top: 10px;
+  font-style: italic;
+  color: grey;
+}
+
+.resume-bullet-content{
+  position: relative;
+  text-shadow: 2px 2px 7px rgb(0, 0, 0);
+  padding: 20px 50px 40px 50px;
+  margin: auto;
+}
+
+.resume-contact-button{
+  background-color: #323237;
+  /* border: none; */
+  color: white;
+  padding: 0px 30px;
+  font-size: 0.7em;
+  cursor: pointer;
+  margin: 20px;
+  outline: 0;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  border:5px solid #e9c008bb;
+  /* margin-bottom: 10%; */
+  /* margin-right: 10px; */
+  cursor: pointer;
+  animation: pulsate-shadow 2s ease-out infinite;
+}
+
+#resume-contact-button-container{
+  margin-top: 40px;
+  display: flex; 
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.resume-contact-button > i{
+  font-size: 16px;
+  margin-right: 7px;
+}
+
+/* create margin at bottom for very last section */
+#contact {
+  margin-bottom: 200px;
+}
