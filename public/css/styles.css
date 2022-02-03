@@ -117,14 +117,25 @@ a:active {
     position:relative;
     top: 0;
     left:0;
-    height: 100vh;
     background-image: url("../images/home-faded-edges.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
     overflow-x: hidden;
-    
 }
+
+@media screen and (min-width: 901px) {
+  .home {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home {
+    width: 100%;
+  }
+}
+
 
 /* home page header */
 .vlad{
@@ -637,6 +648,13 @@ a:active {
   padding: 20px 50px 40px 50px;
 }
 
+/* horizontal lines on each side of the headers (unless less than certain width) */
+@media screen and (max-width: 900px) {
+  .resume-content {
+    padding: 20px 10px 40px 10px;
+  }
+}
+
 .resume-content > p{
   color:rgb(205, 239, 255);
   padding: 5px 0 5px 0;
@@ -762,6 +780,7 @@ a:active {
 @media screen and (max-width: 900px) {
   .resume-h2 {
     margin-left: 10px;
+    text-align: center;
   }
 }
 
@@ -806,6 +825,10 @@ li{
   }
   .date{
     margin-left: 10px;
+    text-align: center;
+  }
+  .resume-bullet-content{
+    padding: 20px 15px 40px 15px;
   }
 }
 
