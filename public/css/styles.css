@@ -59,7 +59,7 @@ body{
     font-family: Arial, sans-serif;
     font-size: larger;
     color: white;
-    min-width: 500px;
+    min-width: 200px;
 }
 
 /* link (not visited) */
@@ -125,6 +125,13 @@ a:active {
     overflow-x: hidden;
 }
 
+@media screen and (max-width: 900px) {
+  .home {
+    font-size: 1em;
+  }
+}
+
+
 /* home page header */
 .vlad{
     font-size: 1.2em;
@@ -148,7 +155,8 @@ a:active {
 
 @media screen and (max-width: 900px) {
   .vlad {
-    font-size: 1em;
+    width: 90vw;
+    margin: auto;
   }
 }
 
