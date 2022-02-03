@@ -462,6 +462,13 @@ a:active {
       animation-duration: 2s; 
   }
 
+  @media screen and (max-width: 900px) {
+    #resume-parent-div {
+      width: 95%;
+      height: 92%;
+    }
+  }
+
   #close-resume{
     position: absolute;
     top: -16px;
@@ -734,6 +741,13 @@ a:active {
   /* transition: 0.2s; */
 }
 
+/* when screen is smaller, made padding smaller for list of experience */
+@media screen and (max-width: 900px) {
+  .vertical-tab-content {
+    padding: 5px 5px 5px 0px;
+  }
+}
+
 #vertical-tab-container {
   width: 100%;
 }
@@ -745,6 +759,13 @@ a:active {
   margin: 10px 0px 10px;
 }
 
+@media screen and (max-width: 900px) {
+  .resume-h2 {
+    margin-left: 10px;
+  }
+}
+
+
 /* decorate the bullet points */
 /* #vertical-tab-container > .vertical-tab-content > ul >  */
 li::before{
@@ -755,12 +776,14 @@ li::before{
   width: 2em;
   margin-left: -2em;
 }
+
 /* disable the default */
 /* #vertical-tab-container > .vertical-tab-content > ul >  */
 li{
   list-style: none;
   margin: 0px 0px 15px 0px;
 }
+
 
 .date{
   margin-top: 10px;
@@ -773,6 +796,17 @@ li{
   text-shadow: 2px 2px 7px rgb(0, 0, 0);
   padding: 20px 50px 40px 50px;
   margin: auto;
+}
+
+
+/* when screen is smaller, made padding smaller */
+@media screen and (max-width: 900px) {
+  li::before {
+    margin-left: 1em;
+  }
+  .date{
+    margin-left: 10px;
+  }
 }
 
 .resume-contact-button{
