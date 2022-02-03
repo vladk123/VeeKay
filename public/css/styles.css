@@ -832,6 +832,9 @@ li{
   .resume-bullet-content{
     padding: 20px 15px 40px 15px;
   }
+  .resume-bullet-content > ul {
+    padding-inline-start: 10px;
+  }
 }
 
 .resume-contact-button{
