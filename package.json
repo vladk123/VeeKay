@@ -1,10 +1,11 @@
 {
   "name": "veekay",
   "version": "1.0.0",
-  "description": "veekay website by V.K.",
+  "description": "VeeKay website by V.K.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Vlad K",
   "license": "ISC",
