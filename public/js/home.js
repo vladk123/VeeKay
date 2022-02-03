@@ -15,8 +15,12 @@ const homeAnimateUp = () => {
         toFadeOut[i].classList.add('fade-out'); 
     }
 
+    
+
     // re-direct user after a delay
-    setTimeout(() => {  
+    setTimeout(() => {
+        // keep it all black until it redirects successfully
+        document.getElementById("black-out").style.display = "block"
         window.location.href = "/resume"
     }, 1200);
 

@@ -125,6 +125,7 @@ const resumeClose = () => {
 
     // re-direct user after a delay
     setTimeout(() => {  
+        document.getElementById("black-out").style.display = "block"
         window.location.href = "/"
     }, 1200);
 }
