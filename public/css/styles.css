@@ -117,25 +117,13 @@ a:active {
     position:relative;
     top: 0;
     left:0;
+    height: 100vh;
     background-image: url("../images/home-faded-edges.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
     overflow-x: hidden;
 }
-
-@media screen and (min-width: 901px) {
-  .home {
-    height: 100vh;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .home {
-    width: 100%;
-  }
-}
-
 
 /* home page header */
 .vlad{
@@ -155,7 +143,13 @@ a:active {
     -ms-background-clip: text;
     background-clip: text;
     color: transparent;
+}
 
+
+@media screen and (max-width: 900px) {
+  .vlad {
+    font-size: 1em;
+  }
 }
 
 /* BACKGROUND */
