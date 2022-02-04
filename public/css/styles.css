@@ -575,7 +575,7 @@ a:active {
     position: relative;
     top: 0;
     padding-top: 25px;
-    min-height: 100px;
+    /* min-height: 100px; */
     width: 100%;
   }
 
@@ -590,7 +590,7 @@ a:active {
   #resume-nav {
       /* margin: auto; */
       position: relative;
-      margin: 0 auto;
+      margin: 10px auto;
       top: 50%;
       font-family: 'Press Start 2P', cursive;
       color: white;
@@ -612,6 +612,7 @@ a:active {
   #resume-nav {
     padding: 5px 0px 5px 0px;
     font-size: 0.7em;
+    margin-right: 24px;
   }
   #resume-nav-container{
     padding-top: 10px
@@ -652,13 +653,13 @@ a:active {
   }
 
   /* making sure the header divs don't scroll on mobile */
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 900px) {
   .resume-h1-container {
     overflow-y: visible;
   }
   /* increase the height of what is shown in resume */
   #resume-main-container{
-    height: calc(90% - 95px);
+    height: calc(90% - 85px);
   }
 }
 
@@ -967,4 +968,13 @@ li{
 }
 
 
-
+#resume-footer-container{
+  opacity: 0;
+  background-color: pink;
+  position: relative;
+  bottom: 0;
+  padding-bottom: 25px;
+  height: 100px;
+  /* min-height: 100px; */
+  width: 100%;
+}
