@@ -161,12 +161,12 @@ a:active {
     color: transparent;
 }
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   .vlad {
     width: 90vw;
     margin: auto;
-  }
+    font-size: 5vw;
+  }  
 }
 
 /* BACKGROUND */
