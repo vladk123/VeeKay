@@ -62,6 +62,18 @@ body{
     min-width: 200px;
 }
 
+@media screen and (max-width: 900px) {
+  body {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: medium;
+  }
+}
+
 /* for blacking out screen on transition (in case of  slow load speeds) */
 #black-out{
   position: fixed;
@@ -495,11 +507,18 @@ a:active {
       animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
       animation-duration: 2s; 
   }
-
+  /* for mobile screens */
   @media screen and (max-width: 900px) {
     #resume-parent-div {
       width: 95%;
       height: 92%;
+    }
+  }
+  /* for tiny screens */
+  @media screen and (max-width: 450px) {
+    #resume-parent-div {
+      width: 98%;
+      height: 98%;
     }
   }
 
@@ -637,6 +656,10 @@ a:active {
   .resume-h1-container {
     overflow-y: visible;
   }
+  /* increase the height of what is shown in resume */
+  #resume-main-container{
+    height: calc(90% - 95px);
+  }
 }
 
 .resume-h1 {
@@ -693,7 +716,7 @@ a:active {
 
 .resume-smaller-container {
   display: flex;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px;
 }
 
 .resume-img{
@@ -731,7 +754,12 @@ a:active {
   .resume-img{
     margin: 0px auto 60px auto;
   }
+  #experience > .resume-smaller-container {
+    padding: 0px 2px;
+  }
 }
+
+
 
 
 /* resume experience vertical tabs */
@@ -762,6 +790,14 @@ a:active {
   cursor: pointer;
   transition: 0.7s;
   font-size: 17px;
+  
+}
+
+/* when screen is smaller, decrease padding on sides */
+@media screen and (max-width: 900px) {
+  .vertical-tabs button {
+    padding: 22px 5px;
+  }
 }
 
 /* Change background color of buttons on hover */
@@ -858,9 +894,12 @@ li{
     text-align: center;
   }
   .resume-bullet-content{
-    padding: 20px 15px 40px 15px;
+    padding: 20px 5px 40px 5px;
   }
   .resume-bullet-content > ul {
+    padding-inline-start: 10px;
+  }
+  .vertical-tab-content > ul {
     padding-inline-start: 10px;
   }
 }
