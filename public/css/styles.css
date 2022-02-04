@@ -44,6 +44,7 @@
 html{
   /* hide scrollbar for IE / ff */
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;  
   scrollbar-width: none; 
 }
@@ -614,10 +615,18 @@ a:active {
     padding: 5px 0px 5px 0px;
     font-size: 0.7em;
     margin-right: 24px;
-    max-height: 10%
+    
   }
   #resume-nav-container{
-    padding-top: 10px
+    padding-top: 10px;
+    max-height: 10%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+  #resume-nav-container::-webkit-scrollbar {
+    display: none;
+
   }
   .nav-location-num{
     display:inherit;
@@ -636,14 +645,14 @@ a:active {
 #resume-main-container{
   margin: auto;
   position:relative;
-  height: calc(90% - 50px);
-  max-height: 85%;
+  /* height: calc(90% - 50px); */
+  max-height: 84%;
   max-width: 1000px;
   overflow-y: scroll;
   /* hide scrollbar for IE / ff */
   -ms-overflow-style: none;  
   scrollbar-width: none;  
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   scroll-behavior: smooth; 
 }
   /* hide scrollbar for webkit (chrome) */
@@ -657,10 +666,10 @@ a:active {
   }
 
   
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 820px) {
   /* increase the height of what is shown in resume */
   #resume-main-container{
-    height: calc(89%);
+    max-height: 88%;
   }
 }
 
