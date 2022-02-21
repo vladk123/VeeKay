@@ -8,6 +8,15 @@ app.engine('ejs', ejsMate); //telling app to use this engine instead of default 
 app.set('view engine', 'ejs'); //per the ejs docs
 app.set('views', path.join(__dirname,'views')); //making sure "views" folder is relative to this file
 app.use(express.static(path.join(__dirname, 'public'))); //telling it to serve "public" directory (the public folder we created).
+// if in production, check that it's on https (otherwise redirect to https)
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+      if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`)
+      else
+        next()
+    })
+}
 
 //REQUIRE ROUTE FILES
 const gameRoute = require('./routes/game');

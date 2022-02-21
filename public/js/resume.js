@@ -10,6 +10,7 @@ const toggleWindow = () => {
     }
     // toggle light
     getWindow[ranNum].classList.toggle("window-on")
+    // getWindow[ranNum].classList.add("window-on")
 }
 
 ///////////Toggling character walking
@@ -37,15 +38,25 @@ const toggleCharacter = () => {
      
 }
 
-const callWindowLights = window.setInterval(() => {
+let callWindowLights = window.setInterval(() => {
     toggleWindow()
   }, 1500);
 
-const callCharacter = window.setInterval(() => {
+let callCharacter = window.setInterval(() => {
     toggleCharacter()
   }, 1500);
 
+  
+/////////// Function to auto-scroll to correct part of nav menu
+const scrollNav = (activeText) => {
+    const activeNavText = document.querySelector(activeText)
+    // activeNavText.scrollIntoView({behavior: "smooth", block: "center"})
+    if(activeNavText){
+        const topPos = activeNavText.offsetTop;
+        // document.getElementById('resume-nav-container').scrollTop = topPos-20;
+    }
 
+}
 
 ///////////// Showing What Part of Page User is On
 const aboutMe = document.querySelector('#about-me')
@@ -66,22 +77,31 @@ const contactLink = document.querySelector('#link-contact')
 const locationArray = [aboutMeLink, experienceLink, skillsLink, educationLink, contactLink]
 
 // function that shows if element is in the window
+let currentLocation
 const highlightLocation = (link, classToHighlight) => {
     const observer = new window.IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-        // if another location is highlighted, unhighlight it 
-        for (loc of locationArray){
-            if(loc.classList.contains("highlight")){
-                loc.classList.remove("highlight")
+        if (entry.isIntersecting) {
+            console.log('intersection')
+            // if new current location isn't the same as the last one
+            if(link !== currentLocation){
+                // if another location is highlighted, unhighlight it 
+                for (loc of locationArray){
+                    if(loc.classList.contains("highlight")){
+                        loc.classList.remove("highlight")
+                    }
+                }
             }
+            // set the current location
+            currentLocation = link
+            classToHighlight.classList.add("highlight")
+            // classToHighlight.classList.toggle("highlight")
+            scrollNav('.highlight')
+            return
         }
-        classToHighlight.classList.add("highlight")
-        return
-    }
-    classToHighlight.classList.remove("highlight")
+        classToHighlight.classList.remove("highlight")
     }, {
     root: document.querySelector("#resume-main-container"), // the "viewport"
-    // threshold: [0], // set offset  - however much % is visible in viewport
+    threshold: [0.2, 0.9], // set offset  - however much % is visible in viewport
     })
 
     observer.observe(link);
@@ -108,7 +128,7 @@ function openCity(evt, cityName) {
     evt.currentTarget.classList.add("active-tab") ;
   }
   
-// animate things on window close
+///// animate things on window close, redirect
 const resumeClose = () => {
     // animate some elements to be pushed up after button click
     const toAnimate = document.getElementsByClassName("animate")
@@ -128,4 +148,77 @@ const resumeClose = () => {
         document.getElementById("black-out").style.display = "block"
         window.location.href = "/"
     }, 1200);
+}
+
+////////////Toggle Menu on mobile
+const toggleMenu = () => {
+    document.getElementById("resume-nav").classList.toggle("show-nav")
+    document.getElementById("resume-nav-container").classList.toggle("show-nav")
+    document.getElementById("hamburger-menu").classList.toggle("show-nav")
+    document.getElementById("resume-main-container").classList.toggle("show-nav")
+}
+
+////////////Lights Toggle
+let lightToggle = "on"
+const toggleLights = () => {
+    // toggle light switch
+    if(lightToggle === "on"){
+        lightToggle = "off"
+    } else {
+        lightToggle = "on"
+    }
+
+    // toggle js that handles lights
+    // turn it off regardless (to clear any existing ones)
+    window.clearInterval(callWindowLights);
+    window.clearInterval(callCharacter);
+    // if toggle to "on", turn functions on
+    if(lightToggle === "on"){
+        callWindowLights = window.setInterval(() => {
+            toggleWindow()
+          }, 1500);
+        
+        callCharacter = window.setInterval(() => {
+            toggleCharacter()
+          }, 1500);
+    } 
+    
+    // turn off existing window lights
+    const getWindow = document.getElementsByClassName("window-on")
+    while(getWindow.length){
+        getWindow[0].classList.remove("window-on")        
+    }
+
+    // toggle nav bar light
+    const getNavBar = document.getElementById("resume-nav-container")
+    if(lightToggle === "off"){
+        getNavBar.classList.remove("nav-border")
+    } else {
+        if(!getNavBar.classList.contains("nav-border")){
+            getNavBar.classList.add("nav-border")
+        }
+    }
+
+    // toggle button icon
+    const lightButton = document.getElementById("lights-control-icon")
+    if(lightToggle === "off"){
+        lightButton.classList.remove("material-icons")
+        lightButton.classList.add("material-icons-outlined")
+    } else {
+        lightButton.classList.add("material-icons")
+        lightButton.classList.remove("material-icons-outlined")
+    }
+}
+
+/////////// Move to href
+const moveToHref = (theHref) => {
+    // close the menu
+    const theMenu = document.getElementsByClassName('show-nav')
+    if(theMenu.length){
+        while(theMenu.length){
+            theMenu[0].classList.remove('show-nav')
+        }
+    }
+    // scroll to view
+    document.getElementById(theHref).scrollIntoView();
 }

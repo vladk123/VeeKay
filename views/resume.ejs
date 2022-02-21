@@ -18,20 +18,22 @@
 </div>
 <div id="resume-parent-div">
 
-    <div id="resume-nav-container">
+    <div id="resume-nav-container" class="nav-border">
         <div id="resume-nav">
             <span class="resume-nav-gap"></span>
-            <a href="#about-me"><span class="resume-nav-location" id="link-about"><span class="nav-location-num">1) </span>About</span></a>
-            <a href="#experience"><span class="resume-nav-location" id="link-experience"><span class="nav-location-num">2) </span>Experience</span></a>
-            <a href="#skills"><span class="resume-nav-location" id="link-skills"><span class="nav-location-num">3) </span>Skills</span></a>
-            <a href="#education"><span class="resume-nav-location" id="link-education"><span class="nav-location-num">4) </span>Education</span></a>
-            <a href="#contact"><span class="resume-nav-location" id="link-contact"><span class="nav-location-num">5) </span>Contact</span></a>
+            <a id="link-about" class="resume-nav-location"  onclick="moveToHref('about-me')"><span><span class="nav-location-num">1) </span>About</span></a>
+            <a id="link-experience" class="resume-nav-location" onclick="moveToHref('experience')"><span><span class="nav-location-num">2) </span>Experience</span></a>
+            <a id="link-skills" class="resume-nav-location" onclick="moveToHref('skills')"><span><span class="nav-location-num">3) </span>Skills</span></a>
+            <a id="link-education" class="resume-nav-location" onclick="moveToHref('education')"><span><span class="nav-location-num">4) </span>Education</span></a>
+            <a id="link-contact" class="resume-nav-location" onclick="moveToHref('contact')"><span><span class="nav-location-num">5) </span>Contact</span></a>
             <span class="resume-nav-gap"></span>
         </div>
+        <div id="hamburger-menu" onclick="toggleMenu()"><i class="material-icons">menu</i></div>
     </div>
     <!-- the resume -->
-    <div id="resume-main-container">
+    
 
+    <div id="resume-main-container">
         <section id="about-me">
             <div class="resume-h1-container" >
                 <h1 class="resume-h1" >About Me</h1>
@@ -45,7 +47,7 @@
                         that this is the career path I should have taken. So I am leaping into the new (for me) and exciting world of web development.</p>
                     <p>After graduating university and continuing my career path into real estate, I was coding automation 
                         scripts to help me with my job (Python, VBA, etc.) and building websites for our business. I didn't seem to realize this until 
-                         2021, when I decided to take an online full-stack bootcamp.</p>
+                        2021, when I decided to take an online full-stack bootcamp.</p>
                     <p>Some irrelevant interests: cars, real estate, photography, the outdoors.</p>
                     <p id="go-on-pc">***P.S. this site is best seen on the computer!</p>
                 </div>
@@ -139,7 +141,7 @@
                         </div>
                     </div>
                     
-                      
+                    
             </div>
         </section>
 
@@ -157,6 +159,7 @@
                         <li>AJAX, EJS, Passport NPM Packages</li>
                         <li>MySQL, MongoDB, Cloudinary</li>
                         <li>GitHub, Visual Studio Code</li>
+                        <li>Python (not for web dev purposes)</li>
                         <br>
                     </ul>
                     </ul>
@@ -164,7 +167,6 @@
                     <ul>
                         <li>React</li>
                         <li>Efficient back-end coding (Big O Notation)</li>
-                        <li>Ensuring back-end website security</li>
                         <br>
                     </ul>
                     <h2 class="resume-h2">Other Skills and Traits</h2>
@@ -240,6 +242,7 @@
     <br>
     <!-- button to go back -->
     <div id="close-resume" onclick="resumeClose()"><i class="material-icons">close</i></div>
+    <div id="lights-control" onclick="toggleLights()"><i id="lights-control-icon" class="material-icons">lightbulb</i></div>
 </div>
 
 
