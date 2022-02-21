@@ -512,15 +512,15 @@ a:active {
   /* for mobile screens */
   @media screen and (max-width: 900px) {
     #resume-parent-div {
-      width: 95%;
-      height: 92vh;
+      width: calc(95% - 40px);
+      height: calc(92vh - 40px);
     }
   }
   /* for tiny screens */
   @media screen and (max-width: 450px) {
     #resume-parent-div {
-      width: 98%;
-      height: 98vh;
+      width: calc(98% - 40px);
+      height: calc(98vh - 40px);
     }
   }
 
@@ -780,7 +780,8 @@ a:active {
     cursor: pointer;
   }
   #hamburger-menu.show-nav{
-    padding-top: 0;
+    position: absolute;
+    bottom: 0;
   }
   
 }
