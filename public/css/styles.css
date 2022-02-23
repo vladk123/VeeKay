@@ -589,6 +589,9 @@ a:active {
   /* tell viewer best to see on pc, if on small device */
 @media screen and (max-width: 860px) {
   #go-on-pc{
+    padding: 10px;
+    border: solid #e9c008bb;
+    background: #e9c0082b;
     display:inherit;
   }
 }
