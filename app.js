@@ -36,6 +36,6 @@ app.all('*', (req, res, next) => {
 })
 
 //PORT LISTENING
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log("VeeKay server started - listening...");
 });
