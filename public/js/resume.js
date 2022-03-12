@@ -131,13 +131,11 @@ function openCity(evt, cityName) {
 const resumeClose = () => {
     // animate some elements to be pushed up after button click
     const toAnimate = document.getElementsByClassName("animate")
-    console.log (toAnimate)
     for(let i = 0; i < toAnimate.length; i++){
         toAnimate[i].classList.add('animate-up'); 
     }
     // make some fade out (using opacity)
     const toFadeOut = document.getElementsByClassName("to-fade-out")
-    console.log (toFadeOut)
     for(let i = 0; i < toFadeOut.length; i++){
         toFadeOut[i].classList.add('fade-out'); 
     }

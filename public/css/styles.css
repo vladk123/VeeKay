@@ -1185,3 +1185,22 @@ li{
     padding: 9px;
     cursor: pointer;
 }
+
+/* when screen is small */
+@media screen and (max-width: 576px) {
+  .button-container{
+    width: 100%;
+  }
+
+  .resume-contact-button{
+    width: 92%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .contact-form-field{
+    font-size: 2.3vmin;
+    letter-spacing: 2px;
+  }
+
+}
