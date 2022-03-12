@@ -1,5 +1,12 @@
+// if not in production, require the dotenv package
+if (process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+
 const express = require("express"); 
+const bodyParser = require('body-parser')
 const app = express();
+
 const path = require('path'); //so we can set views directory below
 const ejsMate = require('ejs-mate'); //engine used to parse EJS
 
@@ -7,6 +14,8 @@ const ejsMate = require('ejs-mate'); //engine used to parse EJS
 app.engine('ejs', ejsMate); //telling app to use this engine instead of default one
 app.set('view engine', 'ejs'); //per the ejs docs
 app.set('views', path.join(__dirname,'views')); //making sure "views" folder is relative to this file
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })) //for passing things through forms
 app.use(express.static(path.join(__dirname, 'public'))); //telling it to serve "public" directory (the public folder we created).
 // if in production, check that it's on https (otherwise redirect to https)
 if(process.env.NODE_ENV === 'production') {

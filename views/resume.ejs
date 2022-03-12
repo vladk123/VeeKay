@@ -40,9 +40,9 @@
             </div>
             <div class="resume-smaller-container">
                 <div class="resume-content" >
-                    <p>Hello - thanks for checking out my resume! I found my passion for web development by accident. 
-                        I first stumbled into it while trying to make a website for some side income (more on that under "Experience" below). </p>
-                    <p>
+                    <!-- <p>Hello - thanks for checking out my resume! I found my passion for web development by accident. 
+                        I first stumbled into it while trying to make a website for some side income (more on that under "Experience" below). </p>-->
+                    <p> 
                         While my career has taken me another route, I always found myself tinkering with code in my spare time and finally came to realize
                         that this is the career path I should have taken. So I am leaping into the new (for me) and exciting world of web development.</p>
                     <p>After graduating university and continuing my career path into real estate, I was coding automation 
@@ -53,6 +53,7 @@
                 </div>
                 <div class="resume-img">
                     <div class="resume-img-container"></div>
+                    <a href = "vlad-resume-2022.pdf" download><div><button class="resume-contact-button about-me-section-pdf">Resume PDF</button></div></a>
                 </div>
                 
             </div>
@@ -92,7 +93,7 @@
                             <p class="date">2021</p>
                             <ul>
                                 <li><a href="http://yelpcamp.ca" target="_blank">Click here to view project</a></li>
-                                <li>A coding practise project to build a camping website with photos and reviews </li>
+                                <li>A coding practise project to build a campsite display website with photos and reviews </li>
                                 <li><strong>Front-end languages / packages</strong>: HTML, CSS, Bootstrap, JS, jQuery</li>
                                 <li><strong>Back-end languages / packages</strong>: Node, Express and NPM packages such as EJS, Passport, Flash, etc </li>
                                 <li><strong>Database</strong>: MongoDB </li>
@@ -104,22 +105,23 @@
                             <p class="date">January 2017 - January 2022</p>
                             <ul>
                                 <li>With an interest in real estate, worked at Fuse PM as a property manager. Handled marketing, renting of properties, leases, and all 
-                                    technical/coding-related matters.</li>
+                                    technical/coding-related matters, managing ~200 units.</li>
                                 <li>Co-designed and built the company website with <strong>WordPress</strong>.</li>
                                 <li>Used <strong>VBA</strong> in Microsoft Outlook to auto-reply with dynamic messages to prospect inquiries based on specific criteria.</li>
                                 <li>Used <strong>Python</strong> to create an automated ad re-listing program of rental properties.</li>
-                                <li>Saved company time spent on replying to over 50,000 applicants individually and re-listing ads on a daily basis.</li>
+                                <li>Saved countless hours of company time spent on replying to over 50,000 applicants individually and re-listing ads on a daily basis.</li>
                             </ul>
                         </div>
                         
                         <div id="Century21" class="vertical-tab-content" style="display: none;">
                             <h2 class="resume-h2">Century 21 (Self-Employed)</h2>
-                            <p class="date">July 2018 - December 2020</p>
+                            <p class="date">July 2019 - December 2020</p>
                             <ul>
                                 <li>Real estate agent </li>
                                 <li>Created a semi-automated system, allowing interested parties without agents to schedule showings using <strong>Active Campaign</strong> and <strong>WordPress</strong>.</li>
-                                <li>Designed and built a client prospecting website (Strategic Investments - no longer functional) with <strong>WordPress.</strong></li>
+                                <li>Designed and built a client prospecting website (Strategic Investments - no longer functional) with <strong>WordPress for myself and my partner.</strong></li>
                                 <li>Used Excel <strong>VBA</strong> to create an advanced rental property investment calculator to aid in client presentations. </li>
+                                <li>Using these systems, helped sell and sold/rented out over $5,000,000 worth of real estate. </li>
                             </ul>
                         </div>
                         
@@ -163,18 +165,16 @@
                         <li>Python (not for web dev purposes)</li>
                         <br>
                     </ul>
-                    </ul>
-                    <h2 class="resume-h2">Currently Learning</h2>
+                    <!-- <h2 class="resume-h2">Currently Learning</h2>
                     <ul>
                         <li>React</li>
-                        <!-- <li>Efficient back-end coding (Big O Notation)</li> -->
                         <br>
-                    </ul>
+                    </ul> -->
                     <h2 class="resume-h2">Other Skills and Traits</h2>
                     <ul>
-                        <li>Spoken and Written Languages: English and Russian</li>
-                        <li>Other Software Profiency: Adobe Photoshop and Premiere Pro, Microsoft Office</li>
-                        <br>
+                        <li>Spoken and written languages: English and Russian</li>
+                        <li>Other software proficiency: Adobe Photoshop and Premiere Pro, Microsoft Office</li>
+                        <li>Ready to learn any new coding languages and software needed for the job</li>
                         <li>Creative and curious, always seeking better and more efficient ways of doing things.</li>
                         <li>Active listener and always open to constructive criticism.</li>
                         <li>Collaborative teammate and empathetic (towards both the business and end user).</li>
@@ -209,10 +209,10 @@
                         <li>MySQL Bootcamp</li><!--<a href="https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert" target="_blank"> -->
                     </ul>
                     <br>
-                    <h2 class="resume-h2">Ryerson University (2012 - 2016)</h2>
+                    <h2 class="resume-h2">Ryerson University (2016)</h2>
                     <ul>
-                        <li>Majored in Finance</li>
-                        <li>Minored in Law</li>
+                        <li>Graduated with a Bachelor of Commerce Degree</li>
+                        <li>Majored in Finance, minored in Law</li>
                     </ul>
                 </div>
             </div>
@@ -224,10 +224,27 @@
             </div>
             <div class="resume-smaller-container">
                 <div class="resume-bullet-content" >
-                    <p>I invite you to reach out, as I am looking for new web development opportunities! Text, call, or email me - I look forward to hearing from you. </p>
+                    <p>I invite you to reach out as I am looking for new web development opportunities! Text, call, or email me - I look forward to hearing from you. </p>
+                    <div>
+                        <form class="contact-form" action="/message" method="POST">
+                            <!-- <label for="name-field">Name</label> -->
+                            <input class="contact-form-field" name="contactName" id="name-field" placeholder="> Name" autocomplete="off" required>
+                            <!-- <label for="email-field">Email</label> -->
+                            <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="> Email" autocomplete="off" required>
+                            <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="> Message" rows=7 autocomplete="off" required></textarea>
+                            <button class="resume-contact-button" id="resume-contact-form-button" type="submit">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div id="form-submitted">
+                        <p>Thanks for reaching out. I'll be in touch with you as soon as I can!</p>
+                        <a class="message-close" onclick="hideMsg()">&#10006;</a>
+                    </div>
+
+                    <br>
                     <div id="resume-contact-button-container">
                         <a href="tel:647-894-7265"><div><button class="resume-contact-button">Call/Text</button></div></a>
-                        <a href = "mailto: vlad.kapitantchouk@gmail.com"><div><button class="resume-contact-button">Email</button></div></a>
+                        <a href = "mailto: vlad.kapitantchouk@gmail.com"><div><button class="resume-contact-button">Personal Email</button></div></a>
                         <a href = "vlad-resume-2022.pdf" download><div><button class="resume-contact-button">Resume PDF</button></div></a>
                     </div>
                     <div class="social-container">
@@ -243,7 +260,7 @@
     <br>
     <!-- button to go back -->
     <div id="close-resume" onclick="resumeClose()"><i class="material-icons">close</i></div>
-    <div id="lights-control" onclick="toggleLights()"><i id="lights-control-icon" class="material-icons">lightbulb</i></div>
+    <div title="Toggle Building Lights in The Background" id="lights-control" onclick="toggleLights()"><i id="lights-control-icon" class="material-icons">lightbulb</i></div>
 </div>
 
 

@@ -81,7 +81,6 @@ let currentLocation
 const highlightLocation = (link, classToHighlight) => {
     const observer = new window.IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-            console.log('intersection')
             // if new current location isn't the same as the last one
             if(link !== currentLocation){
                 // if another location is highlighted, unhighlight it 
@@ -221,4 +220,27 @@ const moveToHref = (theHref) => {
     }
     // scroll to view
     document.getElementById(theHref).scrollIntoView();
+}
+
+
+/////////// Show success message after message submitted
+window.onload = function(){
+    let urlParams = new URLSearchParams(window.location.search); //get all parameters
+    let urlSubmitted = urlParams.get('submitted');
+
+    if(urlSubmitted){
+        // scroll to them correct id (hopefully finishes loading by this point) - delay because otherwise it thinks the id location is elsewhere, based on the height of the first tab
+        const scrollTo = document.querySelector(`#form-submitted`)
+        scrollTo.style.display = "block";
+        scrollTo.scrollIntoView()
+        // remove from param
+        setTimeout(() => {
+            window.history.replaceState(null, null, window.location.pathname);
+        }, 1500);
+    }
+}
+
+const hideMsg = () => {
+    const msgToClose = document.querySelector(`#form-submitted`)
+    msgToClose.style.display = "none";
 }

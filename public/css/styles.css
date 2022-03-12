@@ -1073,6 +1073,11 @@ li{
   animation: pulsate-shadow 2s ease-out infinite;
 }
 
+.resume-contact-button.about-me-section-pdf{
+  min-width: 250px;
+  margin-left: -5px;
+}
+
 #resume-contact-button-container{
   margin-top: 40px;
   display: flex; 
@@ -1091,13 +1096,20 @@ li{
   padding: 10px;
 }
 
-/* when screen is smaller, make contact buttons topple on top of each other */
+/* when screen is smaller */
 @media screen and (max-width: 900px) {
   #resume-contact-button-container {
    display: flex;
    flex-wrap: wrap;
    margin: auto;
+   margin-top: 50px;
   }
+
+  /* Make contact buttons topple on top of each other */
+  .resume-contact-button.about-me-section-pdf{
+    margin: auto;
+  }
+
 }
 
 .resume-contact-button > i{
@@ -1109,4 +1121,67 @@ li{
 /* create margin at bottom for very last section */
 #contact {
   margin-bottom: 50px;
+}
+
+
+/* CONTACT FORM */
+
+.contact-form{
+  /* background-color: rgba(1, 1, 1, 0.5); */
+  text-align: center;
+}
+
+.contact-form-field{
+  width: 90%;
+  max-width: 90%;
+  font-family: 'Press Start 2P', cursive;
+  color: yellow;
+  background-color: rgba(1, 1, 1, 0.5);
+  padding: 10px;
+  border: none;
+  letter-spacing: 3px;
+  caret-color: yellow;
+  
+}
+
+/* don't show outline when field clicked */
+.contact-form-field:active, .contact-form-field:focus{
+  outline: 0;
+  -moz-outline-style: none;
+  outline-style: none;
+}
+
+.contact-form-field + .contact-form-field {
+  border-top: rgba(34, 34, 79, .78) solid 2px;
+}
+
+#resume-contact-form-button{
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 92%;
+  max-width: 92%;
+  animation: none;
+}
+
+.contact-msg{
+  resize: vertical
+}
+
+#form-submitted{
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(51, 51, 107);
+  width: 87%;
+  margin: auto;
+  position: relative;
+  display: none;
+}
+
+.message-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 9px;
+    cursor: pointer;
 }
