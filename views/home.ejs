@@ -3,25 +3,69 @@
     <div id="hero-content">
         <h1>Full Stack Web Developer</h1>
         <h2>When the end-user leaves satisfied, everyone wins.</h2>
+        <h3>Vlad Kapitantchouk</h3>
         <!-- <h2>Happy user, no one's a loser.</h2> -->
     </div>
 </div>
 <div id="nav-position"></div>
 <div id="navbar">
-    <div>
-        <a href="#hero"><span>Vlad Kapitantchouk</span><i class="fa-solid fa-house"></i></a>
-        <div id="nav-items-right">
-            <a href="#about"><span>About</span><i class="fa-solid fa-person"></i></a>
-            <a href="#projects"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
-            <a href="#contact"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
-            <a href="#resume"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
-        </div>
-        
+    <a href="#hero"><span>Vlad Kapitantchouk</span><i class="fa-solid fa-house"></i></a>
+    <div id="nav-items-right">
+        <a href="#about"><span>About</span><i class="fa-solid fa-person"></i></a>
+        <a href="#projects"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
+        <a href="#contact"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
+        <a id="resume-link" href="#resume"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
     </div>
+        
 </div>
 
 <div id="main-content">
-    <div class="content">
+    <div id="about" class="container">
+        <div class="half-flex">
+            <div id="about-me-content">
+                <h3><strong>First sentence here - don't forget to make it larger and some accenting color.</strong></h3>
+                <p> While my career has taken me another route, I always found myself tinkering with code in my spare time and finally came to realize
+                    that this is the career path I should have taken. So I am leaping into the new (for me) and exciting world of web development.</p>
+                <p>After graduating university and continuing my career path into real estate, I was coding automation 
+                    scripts to help me with my job (Python, VBA, etc.) and building websites for our business. I didn't seem to realize this until 
+                    2021, when I decided to take an online full-stack bootcamp.</p>
+                <div class="hidden" id="hidden-about-me">
+                    <p>More content will be here.</p>
+                    <p>More content will be here.</p>
+                    <p>More content will be here.</p>
+                    <p>More content will be here.</p>
+                    <p>More content will be here.</p>
+                    <p>More content will be here.</p>
+                </div>
+                
+                <strong><a id="hide-about-me-toggle" onclick="showAboutMe()">Show More</a></strong>
+                <!-- <p>Some irrelevant interests: cars, real estate, photography, the outdoors.</p> -->
+            </div>
+        </div>
+        <div class="half-flex">
+            <div>
+                <img id="portrait-img" src="images/portrait-old-smaller.jpg">
+                <div>
+                    <span class="badge">HTML5</span>
+                    <span class="badge">CSS3</span>
+                    <span class="badge">Javascript (ES6)</span>
+                    <span class="badge">Bootstrap 4 & 5</span>
+                </div>
+                <div>
+                    <span class="badge">Node + Express</span>
+                    <span class="badge">AJAX</span>
+                    <span class="badge">MongoDB + MySQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="hr-1">
+    <hr class="hr-2">
+    <div id="projects" class="container">
         
+    </div>
+    <div id="contact" class="container">
+
     </div>
 </div>

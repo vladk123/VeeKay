@@ -8,47 +8,43 @@ html{
 body{
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    
+    color: white;
+    background-color: black;
+    background-image: url("../images/stars-2.jpg");
+    /* background-repeat: no-repeat; */
+    background-size:contain;
+    background-position: bottom;
 }
 
 a{
+    color: white;
     text-decoration: none;
+    cursor: pointer;
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+    transition:.3s;
 }
 
 a:hover{
-    font-weight: 900;
     color: #FFAA05;
 }
+
 
 h1{
     font-size: 3.5rem;
 }
 
-#main-content{
-    background-image: url("../images/stars-2.jpg");
-    /* background-repeat:repeat-y; */
-    /* background-color: black ; */
-    /* background-size: cover; */
-    /* background-position: top; */
-    /* min-height: 100vh; */
-    /* position:relative; */
-    background-repeat: no-repeat;
-    background-color: black ;
-    background-size: cover;
-    background-position: bottom;
-    min-height: 100vh;
-    position:relative;
-}
-
-.content{
-    position: relative;
+img{
+    border-radius: 11px;
 }
 
 /* HERO SECTION */
 #hero{
     background-image: url("../images/stars-hero.jpg");
     background-repeat: no-repeat;
-    background-color: black ;
+    /* background-color: black ; */
     background-size: cover;
     background-position: bottom;
     min-height: 100vh;
@@ -67,4 +63,131 @@ h1{
     transform: translate(-50%, -50%);
     
     text-align: center;
+}
+
+/* CONTENTS - GENERAL */
+.container{
+    padding: 10vh 5%;
+    max-width: 1500px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size:x-large;
+    align-items: center;
+    margin: auto;
+}
+
+#main-content{
+    /* background-image: url("../images/stars-2.jpg"); */
+    min-height: 100vh;
+    position:relative;
+    /* padding: 5vh 5%; */
+    margin: auto;
+}
+
+.half-flex{
+    width: 48%;
+    min-width: 300px;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.badge{
+    font-size: small;
+    background-color: #280733;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    transition: transform .2s;
+}
+.badge:hover{
+    font-weight: bolder;
+    transform: scale(1.3);
+    -ms-transform: scale(1.3); 
+    -webkit-transform: scale(1.3); 
+}
+.badge:active{
+    font-weight: bolder;
+    transform: scale(1.3);
+    -ms-transform: scale(1.3); 
+    -webkit-transform: scale(1.3); 
+}
+
+hr{
+    margin: 20px 0px;
+}
+.hr-1{
+    position: relative;
+    width: 80vw;
+    height: 3px;
+    background-color: #FF3CAA;
+    border: none;
+}
+.hr-2{
+    position: relative;
+    width: 80vw;
+    height: 3px;
+    background-color: #3ADCFF;
+    border: none;
+    float:right;
+}
+
+/* ABOUT ME SECTION */
+#portrait-img{
+    width: 80%;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+#about-me-content{
+    text-align: left;
+}
+
+#hidden-about-me{
+    opacity: 1;
+    max-height: 10000px;
+    transition: max-height 0.2s ease-in, opacity 1000ms 0ms;
+}
+
+#hidden-about-me.hidden{
+    /* display: none; */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out, opacity 1000ms 0ms;
+}
+
+
+/* anything over bootstrap's (using as reference point) md screen size */
+@media screen and (min-width: 768px) {
+    
+}
+
+/* anything under bootstrap's (using as reference point) md screen size */
+@media screen and (max-width: 767px) {
+    
+}
+
+
+/* anything over bootstrap's (using as reference point) lg screen size */
+@media screen and (min-width: 992px) {
+    
+}
+
+/* anything under bootstrap's (using as reference point) lg screen size */
+@media screen and (max-width: 992px) {
+    .half-flex{
+        width: 85%
+    }
+    #portrait-img{
+        width: 80%;
+        min-width: 200px;
+        max-width: 300px;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
 }

@@ -4,13 +4,13 @@
     bottom: -100px;
     height: fit-content;
     padding: 20px 0 20px 0;
-    color: white;
-    /* overflow-x: scroll; */
+    z-index: 10;
 }
 
 #navbar:not(.sticky-nav){
     position: absolute;
     bottom: 0;
+    border-top: #3ADCFF solid 3px;
 
     /* animate it */
     animation-name: pop-in;
@@ -27,7 +27,11 @@
 #navbar a {
     padding: 20px;
     width: 100%;
-    color: white;
+    
+}
+
+#navbar > a {
+    font-weight: bolder;
 }
 
 #nav-items-right{
@@ -38,7 +42,7 @@
 .sticky-nav {
     position: fixed;
     top: 0;
-    z-index: 10;
+    border-bottom: #3ADCFF solid 3px;
 
     /* animate it */
     animation-name: pop-out;
@@ -50,6 +54,10 @@
     -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: 1;
+}
+
+#resume-link{
+    /* border: coral solid 1px; */
 }
 
 @keyframes pop-out {
