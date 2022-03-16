@@ -1,9 +1,5 @@
 const sendEmail = require('../utils/send_email');
 
-module.exports.renderContact = (req, res, next) => {
-    res.render('resume', {pageTitle: 'Resume'});
-}
-
 module.exports.sendEmail = async(req, res, next) => {
     // send email
     const {contactName, contactEmail, contactMessage} = req.body

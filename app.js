@@ -28,10 +28,10 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 //REQUIRE ROUTE FILES
-const gameRoute = require('./routes/game');
+const mainRoute = require('./routes/main');
 
 //USE ROUTE FILES -> had to move this down in the code, otherwise sessions do not work!
-app.use('/', gameRoute);
+app.use('/', mainRoute);
 
 //HOME PAGE
 app.get('/', (req, res) => {
@@ -41,7 +41,6 @@ app.get('/', (req, res) => {
 //FOR ALL NON-EXISTING ROUTES
 app.all('*', (req, res, next) => { 
 	res.render('404.ejs', {pageTitle: 'Page Not Found...'})
-	// return
 })
 
 //PORT LISTENING
