@@ -2,9 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 /* OVERALL STYLE */
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     font-family: 'Raleway', sans-serif;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: 900;
+    color: #FFAA05;
 }
 
 h1{
