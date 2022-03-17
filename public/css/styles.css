@@ -590,6 +590,12 @@ figcaption{
 
 /* anything under bootstrap's (using as reference point) lg screen size */
 @media screen and (max-width: 992px) {
+    h1{
+        font-size: calc(1.375rem + 1.5vw);
+    }
+    h2{
+        font-size: calc(1.325rem + .9vw);
+    }
     .half-flex{
         width: 85%
     }
