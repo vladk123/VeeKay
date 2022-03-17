@@ -67,7 +67,7 @@ body{
 .grey-layer{
     width:100%;
     height:100%;
-    background-color: rgba(48, 47, 47, 0.5);
+    background-color: rgb(255 255 255 / 8%);
 }
 
 /* twinkle movement */
@@ -268,18 +268,18 @@ hr{
     opacity: 1;
 }
 .img-link-img.fade-out{
-    animation: fadeOut 0.5s;
-    -webkit-animation: fadeOut 0.5s;
-    -moz-animation: fadeOut 0.5s;
-    -o-animation: fadeOut 0.5s;
-    -ms-animation: fadeOut 0.5s;
+    animation: fadeOut 1s;
+    -webkit-animation: fadeOut 1s;
+    -moz-animation: fadeOut 1s;
+    -o-animation: fadeOut 1s;
+    -ms-animation: fadeOut 1s;
 }
 .img-link-img.fade-in{
-    animation: fadeIn 0.5s;
-    -webkit-animation: fadeIn 0.5s;
-    -moz-animation: fadeIn 0.5s;
-    -o-animation: fadeIn 0.5s;
-    -ms-animation: fadeIn 0.5s;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
 }
 
 /* fadein */
@@ -334,6 +334,16 @@ hr{
     100% {opacity:0;}
 }
 
+blockquote{
+    margin: 0 0 10px 0;
+    font-size: xx-large;
+}
+
+figcaption{
+    font-style: italic;
+    color: gray;
+}
+
 
 /***** HERO SECTION *****/
 #hero{
@@ -368,7 +378,7 @@ hr{
 #portrait-img{
     width: 80%;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 375px;
     box-shadow: rgba(0, 0, 0, 0.082) 2px 2px 5px 5px;
 }
 
@@ -411,7 +421,7 @@ hr{
 }
 
 .project-section{
-    padding: 30px;
+    padding: 15px 30px 0px 30px;
     margin: 2.5%;
     text-align: center;
     /* border-radius: 11px; */

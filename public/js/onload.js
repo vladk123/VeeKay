@@ -21,42 +21,48 @@ window.onload = () => {
 
     if(imgCarousel.length){
         // find each carousel
+
         for(let imgDiv of imgCarousel){
             // find each image in that carousel
             const imgList = imgDiv.getElementsByClassName('img-link-img')
-            // every 4 secs, change
-            window.setInterval(() => {
-                let breakLoop
-                for(let i = 0; i < imgList.length ; i++){
-                    // if found the one being shown
-                    
-                    if(imgList[i].classList.contains('show')){
-                        // make it fade out
-                        imgList[i].classList.remove('fade-in')
-                        imgList[i].classList.add('fade-out')
-                        window.setTimeout(() => {
-                            // get rid of "show" class
-                            imgList[i].classList.remove('fade-out')
-                            imgList[i].classList.remove('show')
-                            
-                            // if the next image exists, apply "show" and "fade-in"
-                            if(typeof imgList[i + 1] !== "undefined"){
-                                imgList[i + 1].classList.add('show')
-                                imgList[i + 1].classList.add('fade-in')
-                                breakLoop = true
-                            } else {
-                                imgList[0].classList.add('show')
-                                imgList[0].classList.add('fade-in')
-                                breakLoop = true
-                            }
-                        }, 500)
+
+            if(imgList.length > 1){
+                // every 4 secs, change
+                window.setInterval(() => {
+                    let breakLoop
+                    for(let i = 0; i < imgList.length ; i++){
+                        // if found the one being shown
+                        
+                        if(imgList[i].classList.contains('show')){
+                            // make it fade out
+                            imgList[i].classList.remove('fade-in')
+                            imgList[i].classList.add('fade-out')
+                            window.setTimeout(() => {
+                                // get rid of "show" class
+                                imgList[i].classList.remove('fade-out')
+                                imgList[i].classList.remove('show')
+                                
+                                // if the next image exists, apply "show" and "fade-in"
+                                if(typeof imgList[i + 1] !== "undefined"){
+                                    imgList[i + 1].classList.add('show')
+                                    imgList[i + 1].classList.add('fade-in')
+                                    breakLoop = true
+                                } else {
+                                    imgList[0].classList.add('show')
+                                    imgList[0].classList.add('fade-in')
+                                    breakLoop = true
+                                }
+                            }, 1000)
+                        }
+                        if(breakLoop === true){
+                            break
+                        }
                     }
-                    if(breakLoop === true){
-                        break
-                    }
-                }
-            }, 4000);
+                }, 10000);
+            }
         }
+
+        
     }
 
 }

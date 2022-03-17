@@ -1,12 +1,12 @@
 <% layout('./layouts/boilerplate') %>
 <div id="hero">
     <div id="hero-content">
-        <h1>Full Stack Web Developer</h1>
+        <!-- <h1>Full Stack Web Developer</h1>
         <h2>When the end-user leaves <span style="color:#3adcff">satisfied</span>, everyone wins.</h2>
-        <h3>Vlad Kapitantchouk</h3>
-        <!-- <h1>Vlad Kapitantchouk</h1>
+        <h3>Vlad Kapitantchouk</h3> -->
+        <h1>Vlad Kapitantchouk</h1>
         <h2>Full Stack Web Developer</h2>
-        <h3>When the end-user leaves satisfied, everyone wins.</h3> -->
+        <!-- <h3>When the end-user leaves satisfied, everyone wins.</h3> -->
         <!-- <h2>Happy user, no one's a loser.</h2> -->
     </div>
 </div>
@@ -27,32 +27,47 @@
         <div class="grey-layer"></div>
     </div>
     <div id="about" class="container">
+        
         <div class="half-flex">
             <div id="about-me-content">
-                <h3><strong>First sentence here - don't forget to make it larger and <span class="color-accent">some accenting color</span>.</strong></h3>
-                <p> While my career has taken me another route, I always found myself tinkering with code in my spare time and finally came to realize
-                    that this is the career path I should have taken. So I am leaping into the new (for me) and exciting world of web development.</p>
-                <p>After graduating university and continuing my career path into real estate, I was coding automation 
-                    scripts to help me with my job (Python, VBA, etc.) and building websites for our business. I didn't seem to realize this until 
-                    2021, when I decided to take an online full-stack bootcamp.</p>
+                <blockquote><strong>“Great web design <span class="highlight-pink">without functionality</span> is like a sports car 
+                    <span class="highlight-pink">with no engine</span>.”</strong></blockquote>
+                <figcaption>- Paul Cookson</figcaption>
+                
+                <p>
+                    My past real estate career has taught me the importance of empathy, active listening, and iterative testing in order to figure out the best solution for users of the 
+                    service or product. What result do they want and how can we help them accomplish that with minimal effort? Carrying over my passion for creating 
+                    automated solutions for end-users, I actively seek to create a seamless and intuitive experience for the user, while using the back-end to do the logical legwork.
+                </p>
+                <p>
+                    Together, we can create the perfect harmony between what is going on behind the curtains and what is seen on stage to help the user succeed in accomplishing 
+                    their goals.
+                </p>
+                <p>Some irrelevant spare-time interests: cars, real estate, photography, travel, the outdoors.</p>
+                
                 <div class="hidden" id="hidden-about-me">
-                    <p>More content will be here.</p>
-                    <p>More content will be here.</p>
-                    <p>More content will be here.</p>
-                    <p>More content will be here.</p>
-                    <p>More content will be here.</p>
-                    <p>More content will be here.</p>
+                    <p> How did I decide get into web development? Seeing my first "Hello world!" in a casual project several years back was very exciting. After graduating from 
+                        Ryerson University with a Finance major degree, I got to work in the real estate world. Finding myself voluntarily coding automation scripts to help me with my 
+                        job (Python, VBA, etc.) and building websites for our businesses, I realized that the programming path is the one I should have went into.
+                    </p>
+                    <p>
+                        Currently, while having experience in Node / Express and HTML / CSS / JS, I'm happy to learn new frameworks and libraries required for the job. Minimal and understandable 
+                        code while maintaining the same performance levels is something that I always look forward to figuring out. Easy comprehension of the code is
+                        one of the the many things that will lead our team to success.
+                    </p>
+                    
+                    
                 </div>
                 
                 <strong><a id="hide-about-me-toggle" onclick="showAboutMe()">Show More</a></strong>
-                <!-- <p>Some irrelevant interests: cars, real estate, photography, the outdoors.</p> -->
+                
             </div>
         </div>
         <div class="half-flex">
             <div>
                 <img id="portrait-img" src="images/portrait-old-smaller.jpg">
                 <div>
-                    <h4><span class="highlight-pink">V</span>lad <span class="highlight-pink">K</span>apitantchouk</h4>
+                    <h4>Vlad Kapitantchouk</h4>
                 </div>
                 <div>
                     <span class="badge">HTML5</span>
@@ -84,12 +99,17 @@
             
         </div>
         
-        <div class="project-section">
+        <div class="project-section" id="propsked">
             <div class="project-descrip">
                 <h3>PropSked</h3>
-                <p>While still working at FusePM at the end of 2021, I began chipping away at a relatively advanced website that allows 
-                    tenants to easily schedule showings without needing to contact the property manager or landlord that is doing showings 
-                    (tenant screening, automated reminders, etc).</p>
+                <p>
+                    While working at FusePM at the end of 2021, I took on my first relatively advanced website that allows 
+                    tenants to easily schedule showings without needing to contact the landlord. This automated service
+                    saves the landlord time by not having to respond to every showing inquiry, with new users everyday.
+                </p>
+                <p>
+                    Created with the help of several NPM packages and AJAX for a simpler experience.
+                </p>
                 <!-- <div> -->
                     <!-- <span class="badge">HTML5</span> -->
                     <!-- <span class="badge">CSS3</span> -->
@@ -118,9 +138,9 @@
             </a>
             <div class="project-descrip">
                 <h3>YelpCamp</h3>
-                <p>While still working at Fuse PM at the end of 2021, I began chipping away at a relatively advanced website that allows 
-                    tenants to easily schedule showings without needing to contact the property manager or landlord that is doing showings 
-                    (tenant screening, automated reminders, etc).</p>
+                <p>A coding practise project, this website allows users to post their photos and a summary of campgrounds. A map shows the location of each campground,
+                    while other users can leave reviews of the location.</p>
+                <p>Created with the help of Mongoose and EJS to show dynamic data.</p>
                 <!-- <div> -->
                     <!-- <span class="badge">HTML5</span> -->
                     <!-- <span class="badge">CSS3</span> -->
@@ -131,7 +151,7 @@
                     <span class="badge">Node + Express</span>
                     <span class="badge">MongoDB</span>
                 </div>
-                <p><a href="http://yelpcamp.ca" class="button" target="_blank">Deployment</a><a href="" class="button" target="_blank">Github</a></p>
+                <p><a href="http://yelpcamp.ca" class="button" target="_blank">Deployment</a><a href="https://github.com/vladk123/VeeKay" class="button" target="_blank">Github</a></p>
             </div>
         </div>
 
