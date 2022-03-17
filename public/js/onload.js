@@ -1,6 +1,6 @@
 
 window.onload = () => {
-    // Show success message after message submitted
+    /////////// Show success message after message submitted
     let urlParams = new URLSearchParams(window.location.search); //get all parameters
     let urlSubmitted = urlParams.get('submitted');
 
@@ -16,7 +16,19 @@ window.onload = () => {
     }
 
 
-    // scrolling through images under Projects to change them
+    /////////// Make navbar sticky when appropriate
+
+    // find navbar
+    const navbar = document.getElementById('navbar');
+
+    // Only if screen width is greater than bootstrap's md size (using bs's breakpoints as a guideline) - so approx mobile size
+    if (window.innerWidth < 992) {
+
+        navbar.classList.add('sticky-nav')
+    }
+
+
+    /////////// going through images under Projects to change them
     const imgCarousel = document.getElementsByClassName('img-carousel')
 
     if(imgCarousel.length){

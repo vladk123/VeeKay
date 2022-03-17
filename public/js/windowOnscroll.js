@@ -6,8 +6,6 @@ window.onscroll = () => {
 
     // Only if screen width is greater than bootstrap's md size (using bs's breakpoints as a guideline) - so approx mobile size
     if (window.innerWidth >= 992) {
-        // find animated content
-        const animated = document.getElementsByClassName('animated')
 
         // get navbar position
         let navbarPosition = document.getElementById('nav-position').offsetTop;
@@ -19,16 +17,22 @@ window.onscroll = () => {
             navbar.classList.remove('sticky-nav')
         }
 
-        // get postition and apply/remove class as needed for each animated piece of content
-        for(let el of animated){
-            if(window.scrollY >= (el.offsetTop + 10) && el.offsetTop > 0){
-                el.classList.add('animating')
-            } else {
-                el.classList.remove('animating')
-            }
-        }
     } else {
         navbar.classList.add('sticky-nav')
+    }
+
+
+    /////////// Animate 
+    // find animated content
+    const animated = document.getElementsByClassName('animated')
+    
+    // get postition and apply/remove class as needed for each animated piece of content
+    for(let el of animated){
+        if(window.scrollY >= (el.offsetTop + 10) && el.offsetTop > 0){
+            el.classList.add('animating')
+        } else {
+            el.classList.remove('animating')
+        }
     }
 
 
