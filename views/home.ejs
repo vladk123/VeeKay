@@ -2,19 +2,22 @@
 <div id="hero">
     <div id="hero-content">
         <h1>Full Stack Web Developer</h1>
-        <h2>When the end-user leaves satisfied, everyone wins.</h2>
+        <h2>When the end-user leaves <span style="color:#3adcff">satisfied</span>, everyone wins.</h2>
         <h3>Vlad Kapitantchouk</h3>
+        <!-- <h1>Vlad Kapitantchouk</h1>
+        <h2>Full Stack Web Developer</h2>
+        <h3>When the end-user leaves satisfied, everyone wins.</h3> -->
         <!-- <h2>Happy user, no one's a loser.</h2> -->
     </div>
 </div>
 <div id="nav-position"></div>
 <div id="navbar">
-    <a href="#hero"><span>Vlad Kapitantchouk</span><i class="fa-solid fa-house"></i></a>
+    <a title="Vlad Kapitantchouk" href="#hero"><span><img class="nav-main-logo" src="images/veekay-logo.png"></span><i class="veekay-logo"><img src="images/veekay-logo.png"></i></a>
     <div id="nav-items-right">
-        <a title="About" href="#about"><span>About</span><i class="fa-solid fa-person"></i></a>
-        <a title="Projects" href="#projects"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
-        <a title="Contact" href="#contact"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
-        <a title="Resume" id="resume-link" href="#resume"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
+        <a title="About" href="#about" id="about-nav-link"><span>About</span><i class="fa-solid fa-person"></i></a>
+        <a title="Projects" href="#projects" id="projects-nav-link"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
+        <a title="Contact" href="#contact" id="contact-nav-link"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
+        <a title="Resume" id="resume-link" href="vlad-resume-2022.pdf" target="__blank"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
     </div>
         
 </div>
@@ -49,6 +52,9 @@
             <div>
                 <img id="portrait-img" src="images/portrait-old-smaller.jpg">
                 <div>
+                    <h4><span class="highlight-pink">V</span>lad <span class="highlight-pink">K</span>apitantchouk</h4>
+                </div>
+                <div>
                     <span class="badge">HTML5</span>
                     <span class="badge">CSS3</span>
                     <span class="badge">Javascript (ES6)</span>
@@ -58,6 +64,9 @@
                     <span class="badge">Node + Express</span>
                     <span class="badge">AJAX</span>
                     <span class="badge">MongoDB + MySQL</span>
+                </div>
+                <div><a href="https://ca.linkedin.com/in/vlad-kapitantchouk"><i class="fa-brands fa-linkedin-in social-links"></i></a>
+                    <a href="https://github.com/vladk123"><i class="fa-brands fa-github social-links"></i></a>
                 </div>
             </div>
         </div>
@@ -137,14 +146,19 @@
     <div id="contact" class="container">
         <div class="full-width-header">
             <h2>Contact</h2>
+            <p>
+                Get in touch.<br>
+                I'd be happy to hear from you!
+            </p>
+            <p>
+                <strong>vlad.kapitantchouk@gmail.com</strong>
+            </p>
             <div>
                 <form class="contact-form" action="/message" method="POST">
-                    <!-- <label for="name-field">Name</label> -->
-                    <input class="contact-form-field" name="contactName" id="name-field" placeholder="> Name" autocomplete="off" required>
-                    <!-- <label for="email-field">Email</label> -->
-                    <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="> Email" autocomplete="off" required>
-                    <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="> Message" rows=7 autocomplete="off" required></textarea>
-                    <a class="button" type="submit">Send Message</a>
+                    <input class="contact-form-field" name="contactName" id="name-field" placeholder="Name" autocomplete="off" required>
+                    <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="Email" autocomplete="off" required>
+                    <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="Message" rows=7 autocomplete="off" required></textarea>
+                    <div><a class="button" onclick="submitForm(this)">Send Message</a></div>
                 </form>
             </div>
 
@@ -154,10 +168,11 @@
             </div>
 
             <br>
-            <div class="social-container">
-                <a href="https://github.com/vladk123"><img class="social-link" src="" alt="GitHub Profile Link"></a>
-                <a href="https://ca.linkedin.com/in/vlad-kapitantchouk"><img class="social-link" src="" alt="LinkedIn Profile Link"></a>
+            <div><a href="https://ca.linkedin.com/in/vlad-kapitantchouk"><i class="fa-brands fa-linkedin-in social-links"></i></a>
+                <a href="https://github.com/vladk123"><i class="fa-brands fa-github social-links"></i></a>
             </div>
+            <br>
         </div>
     </div>
+    
 </div>

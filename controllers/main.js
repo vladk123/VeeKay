@@ -5,7 +5,5 @@ module.exports.sendEmail = async(req, res, next) => {
     const {contactName, contactEmail, contactMessage} = req.body
     await sendEmail(undefined,undefined,`New Veekay Message`, "email.ejs", {contactName, contactEmail, contactMessage})
 
-    // redirect
-    // res.render('resume', {pageTitle: 'Resume'});
-    return res.redirect('/resume?submitted=true');
+    return res.redirect('/?submitted=true');
 }

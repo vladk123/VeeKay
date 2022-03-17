@@ -4,7 +4,32 @@
 /* OVERALL STYLE */
 html{
     scroll-behavior: smooth;
+    border-radius: 3px;
 }
+
+/***** Scrollbar Design (browsers except Firefox and Edge *****/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #424242;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #686868;
+    border-radius: 5px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #808080;
+    border-radius: 5px;
+}
+
 body{
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -15,6 +40,10 @@ body{
     background-size:contain;
     background-position: bottom;
     overflow-x: hidden;
+
+    /* firefox scrollbar */
+    scrollbar-width: thin; 
+    scrollbar-color: #555 #f1f1f1;
 }
 
 .twinkle-effect {
@@ -78,6 +107,12 @@ a:hover{
 
 h1{
     font-size: 3.5rem;
+    font-weight: 900;
+}
+
+h2{
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 img{
@@ -89,10 +124,11 @@ img{
     font-weight: lighter;
     border: #3adcff solid 1px;
     border-radius: 5px;
-    padding: 5px;
+    box-sizing: border-box;
+    padding: 8px;
     font-weight: 300;
     font-size: 19px;
-    margin: 5px;
+    margin: 10px;
     /* background-color: #ffe1a644; */
     -o-transition:.3s;
     -ms-transition:.3s;
@@ -111,34 +147,11 @@ p{
     font-weight: 200;
 }
 
-/* HERO SECTION */
-#hero{
-    background-image: url("../images/stars-hero.jpg");
-    background-repeat: no-repeat;
-    /* background-color: black ; */
-    background-size: cover;
-    background-position: bottom;
-    min-height: 100vh;
-    position:relative;
-
-    color: white;
-    font-weight: 100;
-}
-
-#hero-content{
-    /* center vertically and horizontally */
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    text-align: center;
-}
 
 /* CONTENTS - GENERAL */
+
 .container{
-    padding: 10vh 5%;
+    padding: 8vh 5%;
     max-width: 1500px;
     min-height: 60vh;
     display: flex;
@@ -321,11 +334,42 @@ hr{
     100% {opacity:0;}
 }
 
+
+/***** HERO SECTION *****/
+#hero{
+    background-image: url("../images/stars-hero.jpg");
+    background-repeat: no-repeat;
+    /* background-color: black ; */
+    background-size: cover;
+    background-position: bottom;
+    min-height: 100vh;
+    position:relative;
+
+    color: white;
+    font-weight: 100;
+}
+
+#hero-content{
+    /* center vertically and horizontally */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+}
+
+#hero-content > h1{
+    text-shadow: 2px 2px #0f2793;
+}
+
 /***** ABOUT ME SECTION *****/
 #portrait-img{
     width: 80%;
     min-width: 200px;
     max-width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.082) 2px 2px 5px 5px;
 }
 
 #about-me-content{
@@ -344,6 +388,15 @@ hr{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.15s ease-out, opacity 1000ms 0ms;
+}
+
+.social-links{
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.highlight-pink{
+    color:#FF3CAA;
 }
 
 /***** PROJECTS SECTION *****/
@@ -410,7 +463,7 @@ hr{
 
 
 .project-descrip{
-    padding: 5%;
+    padding: 5% 0;
     width: 40%
 }
 
@@ -420,45 +473,49 @@ hr{
 .contact-form{
     /* background-color: rgba(1, 1, 1, 0.5); */
     text-align: center;
-  }
-  
-.contact-form-field{
-    width: 90%;
-    max-width: 90%;
-    font-family: 'Press Start 2P', cursive;
-    color: yellow;
-    background-color: rgba(1, 1, 1, 0.5);
-    padding: 10px;
-    border: none;
-    letter-spacing: 3px;
-    caret-color: yellow;
+    width: 50%;
+    min-width: 500px;
+    margin: auto;
+    padding: 5vh ;
 }
   
-  /* don't show outline when field clicked */
+.contact-form-field{
+    width: 95%;
+    max-width: 95%;
+    background-color: rgba(1, 1, 1, 0.5);
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: #3ADCFF solid 1px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+}
+  
+/* don't show outline when field clicked */
 .contact-form-field:active, .contact-form-field:focus{
     outline: 0;
     -moz-outline-style: none;
     outline-style: none;
 }
   
-  .contact-form-field + .contact-form-field {
-    border-top: rgba(34, 34, 79, .78) solid 2px;
-  }
-  
-  #resume-contact-form-button{
+#resume-contact-form-button{
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     width: 92%;
     max-width: 92%;
     animation: none;
-  }
+}
   
-  .contact-msg{
-    resize: vertical
-  }
+.contact-msg{
+    resize: vertical;
+    margin-bottom: 20px;
+}
   
-  #form-submitted{
+/* display message when form submitted */
+#form-submitted{
     padding: 20px;
     text-align: center;
     /* background-color: rgb(51, 51, 107); */
@@ -470,18 +527,22 @@ hr{
     border-radius: 11px;
     background: #ff3caa3d;
     margin-top: 20px;
-  }
+}
   
-  .message-close{
-      position: absolute;
-      top: 2px;
-      right: 5px;
-      padding: 9px;
-      cursor: pointer;
-  }
+.message-close{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    padding: 9px;
+    cursor: pointer;
+}
   
 /* when screen is small */
 @media screen and (max-width: 576px) {
+    p{
+        font-size: large;
+    }
+
     .button-container{
       width: 100%;
     }
@@ -550,5 +611,11 @@ hr{
     }
     .container{
         flex-wrap: wrap;
+        padding: 5vh 3%
+    }
+    .contact-form{
+        width: 95%;
+        min-width: 0;
+        padding: 1vh;
     }
 }

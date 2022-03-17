@@ -27,11 +27,23 @@
 #navbar a {
     padding: 20px;
     width: 100%;
-    
 }
 
 #navbar > a {
     font-weight: bolder;
+}
+
+a.current-location{
+    color: #dcf9ff;
+}
+
+.veekay-logo, .veekay-logo img{
+    max-width: 30px;
+}
+
+.nav-main-logo{
+    position: relative;
+    max-width: 45px;
 }
 
 #nav-items-right{
@@ -56,9 +68,6 @@
     -webkit-animation-iteration-count: 1;
 }
 
-#resume-link{
-    /* border: coral solid 1px; */
-}
 
 @keyframes pop-out {
     0%   { transform: translateY(-100px); opacity: 0; }
