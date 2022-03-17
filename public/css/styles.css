@@ -503,6 +503,7 @@ figcaption{
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: large;
+    box-sizing: border-box;
 }
   
 /* don't show outline when field clicked */
@@ -566,7 +567,7 @@ figcaption{
     }
   
     .contact-form-field{
-      font-size: 2.3vmin;
+      font-size: medium;
       letter-spacing: 2px;
     }
   
