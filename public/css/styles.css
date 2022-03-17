@@ -1,5 +1,5 @@
 /* Fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* OVERALL STYLE */
 html{
@@ -10,14 +10,58 @@ body{
     font-family: 'Raleway', sans-serif;
     color: white;
     background-color: black;
-    background-image: url("../images/stars-2.jpg");
+    background-image: url("../images/stars.jpg");
     /* background-repeat: no-repeat; */
     background-size:contain;
     background-position: bottom;
+    overflow-x: hidden;
+}
+
+.twinkle-effect {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:block;
+
+    background:transparent url(../images/twinkle-filter.png) repeat top center;
+    z-index:0;
+    
+    -moz-animation:move-twinkle-filter 200s linear infinite;
+    -ms-animation:move-twinkle-filter 200s linear infinite;
+    -o-animation:move-twinkle-filter 200s linear infinite;
+    -webkit-animation:move-twinkle-filter 200s linear infinite;
+    animation:move-twinkle-filter 200s linear infinite;
+}
+
+.grey-layer{
+    width:100%;
+    height:100%;
+    background-color: rgba(48, 47, 47, 0.5);
+}
+
+/* twinkle movement */
+@keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-webkit-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-moz-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
+}
+@-ms-keyframes move-twinkle-filter {
+    from {background-position:0 0;}
+    to {background-position:-9500px 4750px;}
 }
 
 a{
-    color: white;
+    color: #3adcff;
+    font-weight: 700;
     text-decoration: none;
     cursor: pointer;
     -o-transition:.3s;
@@ -28,7 +72,7 @@ a{
 }
 
 a:hover{
-    color: #FFAA05;
+    color: #dcf9ff;
 }
 
 
@@ -38,6 +82,33 @@ h1{
 
 img{
     border-radius: 11px;
+    object-fit: cover;
+}
+
+.button{
+    font-weight: lighter;
+    border: #3adcff solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 300;
+    font-size: 19px;
+    margin: 5px;
+    /* background-color: #ffe1a644; */
+    -o-transition:.3s;
+    -ms-transition:.3s;
+    -moz-transition:.3s;
+    -webkit-transition:.3s;
+    transition:.3s;
+}
+
+.button:hover{
+    border: #3adcff solid 1px;
+    border-radius: 5px;
+    background-color: #3adbff1a;
+}
+
+p{
+    font-weight: 200;
 }
 
 /* HERO SECTION */
@@ -69,7 +140,7 @@ img{
 .container{
     padding: 10vh 5%;
     max-width: 1500px;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -80,13 +151,19 @@ img{
 }
 
 #main-content{
-    /* background-image: url("../images/stars-2.jpg"); */
+    background-image: url("../images/stars.jpg");
     min-height: 100vh;
     position:relative;
     /* padding: 5vh 5%; */
     margin: auto;
+    background-color: #181818;
 }
 
+#main-content:not(.twinkle-effect) * {
+    z-index: 1;
+}
+
+/* fit half on each side */
 .half-flex{
     width: 48%;
     min-width: 300px;
@@ -96,12 +173,14 @@ img{
 
 
 .badge{
-    font-size: small;
+    font-size: 14px;
+    font-weight: bold;
     background-color: #280733;
     border-radius: 5px;
-    padding: 5px;
+    padding: 6px;
     display: inline-block;
     transition: transform .2s;
+    margin: 5px;
 }
 .badge:hover{
     font-weight: bolder;
@@ -118,24 +197,131 @@ img{
 
 hr{
     margin: 20px 0px;
-}
-.hr-1{
-    position: relative;
-    width: 80vw;
-    height: 3px;
-    background-color: #FF3CAA;
-    border: none;
-}
-.hr-2{
-    position: relative;
-    width: 80vw;
-    height: 3px;
-    background-color: #3ADCFF;
-    border: none;
-    float:right;
+    border-radius: 3px;
 }
 
-/* ABOUT ME SECTION */
+.hr-left{
+    position: absolute;
+    width: 80vw;
+    height: 5px;
+    background-color: #FF3CAA;
+    border: none;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+.hr-right{
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color: #3ADCFF;
+    border: none;
+    right: 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+
+.hr-left.animating, .hr-right.animating{
+    /* display: block; */
+    width: 80vw;
+    animation: slide-in 0.5s forwards 0.3s;
+    -webkit-animation: slide-in 0.5s forwards 0.3s;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+
+.img-link{
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+
+.img-link-img{
+    display: none;
+}
+
+.img-link-img.show{
+    display: initial;
+    opacity: 1;
+}
+.img-link-img.fade-out{
+    animation: fadeOut 0.5s;
+    -webkit-animation: fadeOut 0.5s;
+    -moz-animation: fadeOut 0.5s;
+    -o-animation: fadeOut 0.5s;
+    -ms-animation: fadeOut 0.5s;
+}
+.img-link-img.fade-in{
+    animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+
+/* fadein */
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+/* fadeout */
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+  
+@-moz-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+  
+@-webkit-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+  
+@-o-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+  
+@-ms-keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+/***** ABOUT ME SECTION *****/
 #portrait-img{
     width: 80%;
     min-width: 200px;
@@ -148,7 +334,7 @@ hr{
 
 #hidden-about-me{
     opacity: 1;
-    max-height: 10000px;
+    max-height: 2000px;
     transition: max-height 0.2s ease-in, opacity 1000ms 0ms;
 }
 
@@ -159,6 +345,160 @@ hr{
     overflow: hidden;
     transition: max-height 0.15s ease-out, opacity 1000ms 0ms;
 }
+
+/***** PROJECTS SECTION *****/
+.full-width-header{
+    text-align: center;
+    flex-basis: 100%;
+    position: relative;
+}
+
+#projects.container{
+    display: block;
+}
+
+.project-section{
+    padding: 30px;
+    margin: 2.5%;
+    text-align: center;
+    /* border-radius: 11px; */
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.project-section img{
+    min-width: 200px;
+    max-width: 600px;
+    max-height: 40vh;
+    width: 90%;
+    /* border: blue solid 4px; */
+    border-radius: 11px;
+    box-shadow: rgba(0, 0, 0, 0.199) 0px 0px 5px 5px;
+    box-sizing: border-box;
+    border-bottom: #FF3CAA solid 6px;
+    transition: transform .2s, box-shadow 1s;
+}
+.project-section img:hover{
+    box-shadow: #ff3caaad 0px 0px 12px 0px;
+    transform: scale(1.01);
+    -ms-transform: scale(1.01); 
+    -webkit-transform: scale(1.01); 
+}
+
+.project-section .badge{
+    background-color: #bb0e6f;
+}
+
+.project-section:nth-child(odd) .badge{
+    background-color: #3c45db;
+}
+
+.project-section:nth-child(odd){
+    text-align: left;
+}
+
+.project-section:nth-child(odd) img{
+    border-bottom: #5A62E6 solid 6px;
+}
+.project-section:nth-child(odd) img:hover{
+    box-shadow: #5a61e693 0px 0px 12px 0px;
+}
+
+
+.project-descrip{
+    padding: 5%;
+    width: 40%
+}
+
+
+/***** CONTACT FORM *****/
+
+.contact-form{
+    /* background-color: rgba(1, 1, 1, 0.5); */
+    text-align: center;
+  }
+  
+.contact-form-field{
+    width: 90%;
+    max-width: 90%;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    background-color: rgba(1, 1, 1, 0.5);
+    padding: 10px;
+    border: none;
+    letter-spacing: 3px;
+    caret-color: yellow;
+}
+  
+  /* don't show outline when field clicked */
+.contact-form-field:active, .contact-form-field:focus{
+    outline: 0;
+    -moz-outline-style: none;
+    outline-style: none;
+}
+  
+  .contact-form-field + .contact-form-field {
+    border-top: rgba(34, 34, 79, .78) solid 2px;
+  }
+  
+  #resume-contact-form-button{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 92%;
+    max-width: 92%;
+    animation: none;
+  }
+  
+  .contact-msg{
+    resize: vertical
+  }
+  
+  #form-submitted{
+    padding: 20px;
+    text-align: center;
+    /* background-color: rgb(51, 51, 107); */
+    width: 87%;
+    margin: auto;
+    position: relative;
+    display: none;
+    border: solid #ff3caa7c;
+    border-radius: 11px;
+    background: #ff3caa3d;
+    margin-top: 20px;
+  }
+  
+  .message-close{
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      padding: 9px;
+      cursor: pointer;
+  }
+  
+/* when screen is small */
+@media screen and (max-width: 576px) {
+    .button-container{
+      width: 100%;
+    }
+  
+    .resume-contact-button{
+      width: 92%;
+      margin: auto;
+      margin-top: 20px;
+    }
+  
+    .contact-form-field{
+      font-size: 2.3vmin;
+      letter-spacing: 2px;
+    }
+  
+  }
+
 
 
 /* anything over bootstrap's (using as reference point) md screen size */
@@ -181,6 +521,27 @@ hr{
 @media screen and (max-width: 992px) {
     .half-flex{
         width: 85%
+    }
+    .project-section{
+        width: 95%;
+        margin: auto;
+        padding: 30px 0;
+        flex-wrap: wrap-reverse;
+    }
+    .project-section:nth-child(odd){
+        text-align: left;
+        flex-wrap: wrap;
+    }
+    .project-descrip{
+        width: 100%;
+    }
+    .project-section img{
+        width: 80%;
+        max-width: 500px;
+    }
+    .img-link{
+        width: 95%;
+        margin: auto;
     }
     #portrait-img{
         width: 80%;

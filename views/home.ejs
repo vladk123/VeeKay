@@ -11,19 +11,22 @@
 <div id="navbar">
     <a href="#hero"><span>Vlad Kapitantchouk</span><i class="fa-solid fa-house"></i></a>
     <div id="nav-items-right">
-        <a href="#about"><span>About</span><i class="fa-solid fa-person"></i></a>
-        <a href="#projects"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
-        <a href="#contact"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
-        <a id="resume-link" href="#resume"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
+        <a title="About" href="#about"><span>About</span><i class="fa-solid fa-person"></i></a>
+        <a title="Projects" href="#projects"><span>Projects</span><i class="fa-solid fa-diagram-project"></i></a>
+        <a title="Contact" href="#contact"><span>Contact</span><i class="fa-solid fa-envelope"></i></a>
+        <a title="Resume" id="resume-link" href="#resume"><span>Resume</span><i class="fa-solid fa-file-pdf"></i></a>
     </div>
         
 </div>
 
 <div id="main-content">
+    <div class="twinkle-effect">
+        <div class="grey-layer"></div>
+    </div>
     <div id="about" class="container">
         <div class="half-flex">
             <div id="about-me-content">
-                <h3><strong>First sentence here - don't forget to make it larger and some accenting color.</strong></h3>
+                <h3><strong>First sentence here - don't forget to make it larger and <span class="color-accent">some accenting color</span>.</strong></h3>
                 <p> While my career has taken me another route, I always found myself tinkering with code in my spare time and finally came to realize
                     that this is the career path I should have taken. So I am leaping into the new (for me) and exciting world of web development.</p>
                 <p>After graduating university and continuing my career path into real estate, I was coding automation 
@@ -60,12 +63,101 @@
         </div>
     </div>
 
-    <hr class="hr-1">
-    <hr class="hr-2">
-    <div id="projects" class="container">
-        
-    </div>
-    <div id="contact" class="container">
+    <br>
+    <hr class="hr-left animated">
+    <br><br>
+    <hr class="hr-right animated">
+    <br>
 
+    <div id="projects" class="container">
+        <div class="full-width-header">
+            <h2>Projects</h2>
+            
+        </div>
+        
+        <div class="project-section">
+            <div class="project-descrip">
+                <h3>PropSked</h3>
+                <p>While still working at FusePM at the end of 2021, I began chipping away at a relatively advanced website that allows 
+                    tenants to easily schedule showings without needing to contact the property manager or landlord that is doing showings 
+                    (tenant screening, automated reminders, etc).</p>
+                <!-- <div> -->
+                    <!-- <span class="badge">HTML5</span> -->
+                    <!-- <span class="badge">CSS3</span> -->
+                    <!-- <span class="badge">Javascript (ES6)</span> -->
+                    <!-- <span class="badge">Bootstrap 5</span> -->
+                <!-- </div> -->
+                <div>
+                    <span class="badge">Node + Express</span>
+                    <span class="badge">AJAX</span>
+                    <span class="badge">MongoDB</span>
+                    <span class="badge">MySQL</span>
+                </div>
+                <p><a href="http://propsked.com" class="button" target="_blank">Deployment</a></p>
+            </div>
+            <a href="http://propsked.com" class="img-link img-carousel" target="_blank">
+                <img class="img-link-img show" src="images/ps-0.JPG">
+                <img class="img-link-img" src="images/ps-1.JPG">
+                <img class="img-link-img" src="images/ps-2.JPG">
+            </a>
+        </div>
+        <div class="project-section">
+            <a href="http://yelpcamp.ca" class="img-link img-carousel" target="_blank">
+                <img class="img-link-img show" src="images/yc-0.JPG">
+                <img class="img-link-img" src="images/yc-1.JPG">
+                <img class="img-link-img" src="images/yc-2.JPG">
+            </a>
+            <div class="project-descrip">
+                <h3>YelpCamp</h3>
+                <p>While still working at Fuse PM at the end of 2021, I began chipping away at a relatively advanced website that allows 
+                    tenants to easily schedule showings without needing to contact the property manager or landlord that is doing showings 
+                    (tenant screening, automated reminders, etc).</p>
+                <!-- <div> -->
+                    <!-- <span class="badge">HTML5</span> -->
+                    <!-- <span class="badge">CSS3</span> -->
+                    <!-- <span class="badge">Javascript (ES6)</span> -->
+                    <!-- <span class="badge">Bootstrap 4</span> -->
+                <!-- </div> -->
+                <div>
+                    <span class="badge">Node + Express</span>
+                    <span class="badge">MongoDB</span>
+                </div>
+                <p><a href="http://yelpcamp.ca" class="button" target="_blank">Deployment</a><a href="" class="button" target="_blank">Github</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <hr class="hr-left animated">
+    <br><br>
+    <hr class="hr-right animated">
+    <br>
+
+    <div id="contact" class="container">
+        <div class="full-width-header">
+            <h2>Contact</h2>
+            <div>
+                <form class="contact-form" action="/message" method="POST">
+                    <!-- <label for="name-field">Name</label> -->
+                    <input class="contact-form-field" name="contactName" id="name-field" placeholder="> Name" autocomplete="off" required>
+                    <!-- <label for="email-field">Email</label> -->
+                    <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="> Email" autocomplete="off" required>
+                    <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="> Message" rows=7 autocomplete="off" required></textarea>
+                    <a class="button" type="submit">Send Message</a>
+                </form>
+            </div>
+
+            <div id="form-submitted">
+                <p>Thanks for reaching out. I'll be in touch with you as soon as I can!</p>
+                <a class="message-close" onclick="hideMsg()">&#10006;</a>
+            </div>
+
+            <br>
+            <div class="social-container">
+                <a href="https://github.com/vladk123"><img class="social-link" src="" alt="GitHub Profile Link"></a>
+                <a href="https://ca.linkedin.com/in/vlad-kapitantchouk"><img class="social-link" src="" alt="LinkedIn Profile Link"></a>
+            </div>
+        </div>
     </div>
 </div>
