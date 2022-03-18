@@ -9,7 +9,7 @@ const showAboutMe = () => {
             hideBtn.innerText = 'Show Less'
         } else {
             hidden.classList.add('hidden')
-            hideBtn.innerText = 'Show More'
+            hideBtn.innerText = 'Learn More'
         }
         
     }
