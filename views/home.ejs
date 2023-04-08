@@ -176,9 +176,10 @@
             </p>
             <div>
                 <form class="contact-form" action="/message" method="POST">
-                    <input class="contact-form-field" name="contactName" id="name-field" placeholder="Name" autocomplete="off" required>
-                    <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="Email" autocomplete="off" required>
-                    <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="Message" rows=7 autocomplete="off" required></textarea>
+                    <input class="contact-form-field" name="contactName" id="name-field" placeholder="Name*" autocomplete="off" required>
+                    <input class="contact-form-field" name="contactEmail" id="email-field" placeholder="Email*" autocomplete="off" required>
+                    <input class="contact-form-field" name="contactConfirm" id="confirm-field" placeholder="How many fingers are on a human's left hand?*" autocomplete="off" required>
+                    <textarea class="contact-form-field contact-msg" name="contactMessage" placeholder="Message*" rows=7 autocomplete="off" required></textarea>
                     <div><a class="button" onclick="submitForm(this)">Send Message</a></div>
                 </form>
             </div>
