@@ -5,7 +5,7 @@ module.exports.sendEmail = async(req, res, next) => {
     const {contactName, contactEmail, contactMessage, contactConfirm} = req.body
 
     // If not all fields are filled out or answer is incorrect
-    if(!contactName || !contactEmail || !contactMessage || !contactConfirm || contactConfirm !== 'five' || contactConfirm !== 'Five' || contactConfirm !== '5'){
+    if(!contactName || !contactEmail || !contactMessage || !contactConfirm || (contactConfirm !== 'five' && contactConfirm !== 'Five' && contactConfirm !== '5')){
         console.log('Spam...')
         return res.redirect('/?submitted=true');
     }
